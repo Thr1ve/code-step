@@ -3,4 +3,4 @@
 // from '../actions' and using es2015 destructuring syntax
 // to pull out specific actions.
 // See `containers/UserContainer.js` for example
-export * from './usersActions';
+export * from './codeActions';

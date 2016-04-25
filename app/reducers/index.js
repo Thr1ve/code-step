@@ -1,10 +1,10 @@
 
 import { combineReducers } from 'redux';
 
-import userData from './userData';
+import code from './codeReducer';
 
 const rootReducer = combineReducers({
-  userData,
+  code
   // add more reducers here...
 });
 
