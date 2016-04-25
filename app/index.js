@@ -3,6 +3,7 @@
 // https://github.com/reactjs/redux/pull/1455/files
 
 import 'babel-polyfill';
+import 'bulma/css/bulma.css';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { browserHistory } from 'react-router';

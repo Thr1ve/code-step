@@ -35,8 +35,6 @@ const TestContainer = React.createClass({
     const { lines } = this.props
     return (
       <div>
-        <button onClick={this.previousStep}> Previous </button>
-        <button onClick={this.nextStep}> Next </button>
         <pre>
           {lines.map((line, i) => <Line key={i} {...line} />)}
         </pre>
