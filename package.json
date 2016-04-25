@@ -13,7 +13,7 @@
     "prod": "NODE_ENV=production node build/index.js",
     "start": "npm run clean && npm run build && npm run prod",
     "dev": "node server/index.babel.js",
-    "deploy:static": "npm run clean:client && npm run build:client && gh-pages -d dist"
+    "deploy:static": "npm run clean:client && GH_PAGES=true npm run build:client && gh-pages -d dist"
   },
   "keywords": [],
   "author": "Thr1ve",
@@ -60,6 +60,7 @@
     "raw-loader": "^0.5.1",
     "react-addons-test-utils": "^0.14.7",
     "redbox-react": "^1.2.2",
-    "redux-logger": "^2.6.1"
+    "redux-logger": "^2.6.1",
+    "static-site-generator-webpack-plugin": "^2.0.1"
   }
 }

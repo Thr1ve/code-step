@@ -3,6 +3,8 @@
 var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 
+var ghPages = process.env.GH_PAGES || false;
+
 var HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
   template: __dirname + '/app/index.html',
   filename: 'index.html',
@@ -20,7 +22,7 @@ module.exports = {
   output: {
     path: __dirname + '/dist',
     filename: 'index_bundle.js',
-    publicPath: '/assets'
+    publicPath: ghPages ? './' : '/assets'
   },
   module: {
     loaders: [
