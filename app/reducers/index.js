@@ -2,9 +2,11 @@
 import { combineReducers } from 'redux';
 
 import code from './codeReducer';
+import steps from './stepReducer';
 
 const rootReducer = combineReducers({
-  code
+  code,
+  steps
   // add more reducers here...
 });
 
