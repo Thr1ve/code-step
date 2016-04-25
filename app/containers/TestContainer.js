@@ -35,7 +35,7 @@ const TestContainer = React.createClass({
     const { lines } = this.props
     return (
       <div>
-        <pre>
+        <pre className="container">
           {lines.map((line, i) => <Line key={i} {...line} />)}
         </pre>
       </div>
