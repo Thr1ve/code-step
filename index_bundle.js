@@ -36450,7 +36450,7 @@
 
 	var Routes = _react2.default.createElement(
 	  _reactRouter.Route,
-	  { path: '/', component: _App2.default },
+	  { path: '/code-step', component: _App2.default },
 	  _react2.default.createElement(_reactRouter.IndexRoute, { component: _IndexPage2.default }),
 	  _react2.default.createElement(_reactRouter.Route, { path: 'test', component: _TestContainer2.default })
 	);
