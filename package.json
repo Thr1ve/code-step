@@ -1,6 +1,6 @@
 {
-  "name": "base-react-redux",
-  "version": "1.0.0",
+  "name": "code-step",
+  "version": "0.1.0",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -12,10 +12,11 @@
     "build": "npm run build:server && npm run build:client",
     "prod": "NODE_ENV=production node build/index.js",
     "start": "npm run clean && npm run build && npm run prod",
-    "dev": "node server/index.babel.js"
+    "dev": "node server/index.babel.js",
+    "deploy:static": "npm run clean:client && npm run build:client && gh-pages -d dist"
   },
   "keywords": [],
-  "author": "",
+  "author": "Thr1ve",
   "license": "MIT",
   "dependencies": {
     "axios": "^0.9.1",
@@ -55,6 +56,7 @@
     "eslint": "^2.7.0",
     "eslint-config-airbnb": "^6.2.0",
     "eslint-plugin-react": "^4.3.0",
+    "gh-pages": "^0.11.0",
     "raw-loader": "^0.5.1",
     "react-addons-test-utils": "^0.14.7",
     "redbox-react": "^1.2.2",
