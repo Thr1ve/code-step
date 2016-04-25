@@ -7,10 +7,14 @@ import { initialize, initSteps, nextStep, previousStep } from '../actions';
 import code from '../code';
 
 const steps = [
-  { highlighted: [1, 2]},
-  { highlighted: [3, 4, 5]},
-  { highlighted: [6, 7]},
-  { highlighted: [8, 9, 10, 11]},
+  { highlighted: [1]},
+  { highlighted: [2]},
+  { highlighted: [3]},
+  { highlighted: [5]},
+  { highlighted: [7, 8, 9]},
+  { highlighted: [10]},
+  { highlighted: [12]},
+  { highlighted: [14, 15, 16, 17, 18, 19, 20, 21, 22]},
 ];
 
 const TestContainer = React.createClass({
@@ -19,15 +23,20 @@ const TestContainer = React.createClass({
     this.props.dispatch(initSteps(steps));
   },
 
-  clickHandler() {
+  nextStep() {
+    this.props.dispatch(nextStep());
+  },
+
+  previousStep() {
     this.props.dispatch(previousStep());
-    // this.props.dispatch(nextStep());
   },
 
   render() {
     const { lines } = this.props
     return (
-      <div onClick={this.clickHandler}>
+      <div>
+        <button onClick={this.previousStep}> Previous </button>
+        <button onClick={this.nextStep}> Next </button>
         <pre>
           {lines.map((line, i) => <Line key={i} {...line} />)}
         </pre>
