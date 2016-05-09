@@ -3,7 +3,6 @@
 // https://github.com/reactjs/redux/pull/1455/files
 
 import 'babel-polyfill';
-import 'bulma/css/bulma.css';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { browserHistory } from 'react-router';
@@ -14,7 +13,7 @@ const store = configureStore();
 const rootEl = document.getElementById('root');
 let render = () => {
   // https://github.com/reactjs/redux/pull/1455/files#r54380102
-  const Root = require('./containers/Root').default;
+  const Root = require('./Root').default;
   ReactDOM.render(
     <Root store={store} history={browserHistory} />,
    rootEl
@@ -41,7 +40,7 @@ if (module.hot) {
     }
   };
 
-  module.hot.accept('./containers/Root', () => {
+  module.hot.accept('./Root', () => {
     // https://github.com/reactjs/redux/pull/1455/files#r55138543
     setTimeout(render);
   });

@@ -1,7 +1,7 @@
 // source: http://www.w3resource.com/javascript-exercises/javascript-basic-exercise-1.php
 module.exports = `var today = new Date();
 var day = today.getDay();
-var daylist = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+var daylist = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];asdfaai
 
 console.log('Today is : ' + daylist[day] + '.');
 

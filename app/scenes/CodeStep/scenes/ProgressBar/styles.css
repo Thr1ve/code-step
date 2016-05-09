@@ -1,0 +1,7 @@
+
+.progressBar {
+  flex: 1 1 auto;
+  overflow: hidden;
+  max-width: 10%;
+  background: #b8b8b8;
+}

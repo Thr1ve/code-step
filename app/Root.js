@@ -3,7 +3,7 @@ import React from 'react';
 import { Router } from 'react-router';
 import { Provider } from 'react-redux';
 
-import routes from '../config/routes';
+import routes from './config/routes';
 
 const Root = React.createClass({
   render() {

@@ -1,8 +1,9 @@
-import { updateHighlights } from './codeActions';
+import { updateHighlights } from '../code/actions';
+import { setNote } from '../notes/actions';
 
 export const LOAD_STEPS = 'LOAD_STEPS';
 export const loadSteps = steps =>
-  ({ type: LOAD_STEPS, steps});
+  ({ type: LOAD_STEPS, steps });
 
 export const SET_NEXT_STEP = 'SET_NEXT_STEP';
 export const setNextStep = () =>
@@ -15,20 +16,21 @@ export const setPreviousStep = () =>
 
 export const executeCurrentStep = () => (dispatch, getState) => {
   const { loadedSteps, currentStep } = getState().steps;
-  dispatch(updateHighlights(loadedSteps[currentStep].highlighted))
-}
+  dispatch(updateHighlights(loadedSteps[currentStep].highlighted));
+  dispatch(setNote(loadedSteps[currentStep].note));
+};
 
 export const initSteps = steps => dispatch => {
   dispatch(loadSteps(steps));
   dispatch(executeCurrentStep());
-}
+};
 
 export const nextStep = () => dispatch => {
   dispatch(setNextStep());
   dispatch(executeCurrentStep());
-}
+};
 
 export const previousStep = () => dispatch => {
   dispatch(setPreviousStep());
   dispatch(executeCurrentStep());
-}
+};

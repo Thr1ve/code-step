@@ -1,4 +1,4 @@
-import { INITIALIZE, SET_HIGHLIGHTS } from '../actions';
+import { INITIALIZE, SET_HIGHLIGHTS } from './actions';
 
 export default function codeReducer(state = {
   lines: [],
@@ -24,7 +24,7 @@ export default function codeReducer(state = {
             lineNumber: i + 1
           })
         )
-      }
+      };
     default:
       return state;
   }

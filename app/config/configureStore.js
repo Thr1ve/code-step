@@ -5,7 +5,7 @@ import createLogger from 'redux-logger';
 // redux-thunk lets us handle asynchronous actions
 import thunk from 'redux-thunk';
 
-import rootReducer from '../reducers';
+import rootReducer from './rootReducer';
 
 export default function configureStore() {
   const logger = createLogger({ collapsed: true });
@@ -19,4 +19,3 @@ export default function configureStore() {
   );
   return store;
 }
-
