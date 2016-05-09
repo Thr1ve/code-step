@@ -40,7 +40,7 @@ const mapStateToProps = (state) => {
   // TODO: move longestLineLength logic to reducer and just add it as property to our state
   return {
     lines,
-    longestLineLength: lines.reduce((prev, cur) =>
+    longestLineLength: lines.length === 0 ? 0 : lines.reduce((prev, cur) =>
       (prev.text.length > cur.text.length ? prev : cur)).text.length
   };
 };
