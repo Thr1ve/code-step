@@ -1,6 +1,6 @@
-export const INITIALIZE = 'INITIALIZE';
-export const initialize = lines =>
-  ({ type: INITIALIZE, lines });
+export const INIT_CODE = 'INIT_CODE';
+export const initCode = lines =>
+  ({ type: INIT_CODE, lines });
 
 export const SET_HIGHLIGHTS = 'SET_HIGHLIGHTS';
 export const setHighlights = lines =>

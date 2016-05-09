@@ -1,4 +1,4 @@
-import { INITIALIZE, SET_HIGHLIGHTS } from './actions';
+import { INIT_CODE, SET_HIGHLIGHTS } from './actions';
 
 export default function codeReducer(state = {
   lines: [],
@@ -14,7 +14,7 @@ export default function codeReducer(state = {
           })
         )
       };
-    case INITIALIZE:
+    case INIT_CODE:
       return {
         ...state,
         lines: action.lines.map((line, i) =>

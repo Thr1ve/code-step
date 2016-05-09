@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 
 import styles from './styles.css';
 
-import { initialize, initSteps } from './services';
+import { initCode, initSteps } from './services';
 
 import SideBar from './scenes/SideBar';
 import ProgressBar from './scenes/ProgressBar';
@@ -26,7 +26,7 @@ const steps = [
 
 const Layout = React.createClass({
   componentDidMount() {
-    this.props.dispatch(initialize(code.split('\n')));
+    this.props.dispatch(initCode(code.split('\n')));
     this.props.dispatch(initSteps(steps));
   },
 
