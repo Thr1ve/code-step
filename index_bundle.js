@@ -50452,9 +50452,13 @@
 	  }
 	});
 
+	console.log(window.__DEV__);
+
+	var base = window.__DEV__ === 'ghpages' ? '/code-step' : '/';
+
 	var Routes = _react2.default.createElement(
 	  _reactRouter.Route,
-	  { path: '/', component: App },
+	  { path: base, component: App },
 	  _react2.default.createElement(_reactRouter.IndexRoute, { component: _IndexPage2.default }),
 	  _react2.default.createElement(_reactRouter.Route, { path: 'codeStep', component: _CodeStep2.default }),
 	  _react2.default.createElement(_reactRouter.Route, { path: 'code', component: _CodeContainer2.default })
