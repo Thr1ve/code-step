@@ -1,5 +1,6 @@
 dist/
 build/
+static/
 
 # OS X
 .DS_Store
@@ -51,4 +52,3 @@ jspm_packages
 
 # Slack Token
 slackToken.js
-

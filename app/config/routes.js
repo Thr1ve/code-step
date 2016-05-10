@@ -17,10 +17,14 @@ const App = React.createClass({
   }
 });
 
+console.log(__DEV__);
+
+const base = __DEV__ === 'ghpages' ? '/code-step/' : '/';
+
 const Routes = (
-  <Route path="/" component={App}>
-    <IndexRoute component={IndexPage} />
-    <Route path="codeStep" component={CodeStep} />
+  <Route path={base} component={App}>
+    <IndexRoute component={CodeStep} />
+    <Route path="indexTest" component={IndexPage} />
     <Route path="code" component={CodeEditor} />
   </Route>
 );
