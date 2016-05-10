@@ -13,7 +13,7 @@ import Line from './components/Line';
 //   // 'this line is 200 characters long.this line is 200 characters long.this line is 200 characters lonthis line is 200 characters long.this line is 200 characters long.this line is 200 characters long $'
 // ];
 
-const Code = ({ lines, longestLineLength }) => (
+const Code = ({ lines, longestLineLength, currentStep }) => (
   <div className={styles.code}>
     <pre>
       {lines.map((line, i) => (
@@ -21,6 +21,7 @@ const Code = ({ lines, longestLineLength }) => (
           key={i}
           lineNumber={i + 1}
           text={line.text}
+          translate={currentStep}
           highlighted={line.highlighted}
           vw={getVWSize(longestLineLength)}
         />
@@ -40,6 +41,7 @@ const mapStateToProps = (state) => {
   // TODO: move longestLineLength logic to reducer and just add it as property to our state
   return {
     lines,
+    currentStep: state.steps.currentStep,
     longestLineLength: lines.length === 0 ? 0 : lines.reduce((prev, cur) =>
       (prev.text.length > cur.text.length ? prev : cur)).text.length
   };
