@@ -5,7 +5,7 @@ import { progressBar } from './styles.css';
 
 const ProgressBar = ({ currentStep, totalSteps }) => (
   <div className={progressBar}>
-    Cur: {currentStep}
+    Cur: {currentStep + 1}
     <br />
     Total: {totalSteps}
   </div>
