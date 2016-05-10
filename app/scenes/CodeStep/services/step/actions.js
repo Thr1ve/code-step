@@ -17,7 +17,11 @@ export const setPreviousStep = () =>
 export const executeCurrentStep = () => (dispatch, getState) => {
   const { loadedSteps, currentStep } = getState().steps;
   dispatch(updateHighlights(loadedSteps[currentStep].highlighted));
-  dispatch(setNote(loadedSteps[currentStep].note));
+  if (typeof loadedSteps[currentStep].note === 'function') {
+    dispatch(setNote(loadedSteps[currentStep].note(getState(), dispatch)));
+  } else {
+    dispatch(setNote(loadedSteps[currentStep].note));
+  }
 };
 
 export const initSteps = steps => dispatch => {
