@@ -49,8 +49,6 @@ const Clickable = React.createClass({
   }
 });
 
-const createClickable = (text) => <Clickable>{text}</Clickable>;
-
 // Idea: we could dispatch an event that would concat steps into
 // our current steps array...this way we could load different
 // paths depending on user input by doing
@@ -61,6 +59,13 @@ const createClickable = (text) => <Clickable>{text}</Clickable>;
 // instance, the words "line 1" in the note?
 export const steps = [
   {
+    highlighted: [],
+    note: () => (
+      <div>
+        Hello! Click Next / Previous to step through the lesson. The code for this lesson can be found {<a target="_blank" href="https://github.com/Thr1ve/code-step/blob/master/app/lessons/test1.js">here</a>}
+      </div>
+    )
+  }, {
     highlighted: [1],
     note: (state, dispatch) => {
       console.log(state);
