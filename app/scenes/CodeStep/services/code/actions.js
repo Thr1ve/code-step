@@ -3,8 +3,8 @@ export const initCode = lines =>
   ({ type: INIT_CODE, lines });
 
 export const SET_HIGHLIGHTS = 'SET_HIGHLIGHTS';
-export const setHighlights = lines =>
-  ({ type: SET_HIGHLIGHTS, lines });
+export const setHighlights = (lines, linesArray) =>
+  ({ type: SET_HIGHLIGHTS, lines, linesArray });
 
 export const updateHighlights = linesArray => dispatch => {
   // Turn array into object for constant-time lookup in reducer
@@ -14,5 +14,5 @@ export const updateHighlights = linesArray => dispatch => {
     }
     return prev;
   }, {});
-  return dispatch(setHighlights(objectified));
+  return dispatch(setHighlights(objectified, linesArray));
 };
