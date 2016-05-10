@@ -9,12 +9,11 @@ const Line = ({ lineNumber, text, highlighted, vw = 1 }) => {
     <div
       style={{
         opacity: `${highlighted ? 1 : 0.5}`,
-        // fontSize: `${highlighted ? vw * 1.03 : vw}vw`,
         fontSize: `${vw}vw`,
-        // TODO: make this math not terrible and abstract elsewhere
         transform: `
+          translateY(${highlighted ? 0.5 : 0}px)
           translateX(${highlighted ? 7 : 0}px)
-          translateZ(${highlighted ? 5 : -5}px)
+          translateZ(${highlighted ? 3 : -5}px)
           `,
         ...styles
       }}
