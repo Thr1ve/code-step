@@ -64,15 +64,18 @@ export const steps = [
     highlighted: [1],
     note: (state, dispatch) => {
       console.log(state);
-      return `This line of code creates a new ${true ? getWord('Date') : getWord('BOOLEAN, BROSEPH')}!`;
+      return `This line of code creates a new ${typeof state === 'object' ? getWord('Date') : getWord('BOOLEAN, BROSEPH')}!`;
     }
   }, {
     highlighted: [2],
     note: `Here, we grab the day of the week as a number from the Date we made in line 1; since today is ${moment().format('dddd')}, our "day" variable will be assigned the value ${moment().day()} `
   }, {
     highlighted: [3],
-    // The word 'strings' below could A. link to MDN page or B. show a tooltip on hover ?
-    note: 'This line creates an array that holds the names of each day of the week as strings'
+    note: () => (
+      <div>
+        This line creates an array that holds the names of each day of the week as {<a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String"> strings </a>}
+      </div>
+    )
   }, {
     highlighted: [5],
     note: `Here, we log out "Today is: ${moment().format('dddd')}" to the console. Since we stored ${moment().day()} in our variable "day", we can use it to get the value at the ${moment().format('do')} index of our "daylist" array.`

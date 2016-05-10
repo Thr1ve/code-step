@@ -11,7 +11,7 @@ const Line = ({ lineNumber, text, highlighted, vw = 1, translate = 'none' }) => 
         opacity: `${highlighted ? 1 : 0.5}`,
         fontSize: `${highlighted ? vw * 1.03 : vw}vw`,
         // TODO: make this math not terrible and abstract elsewhere
-        transform: `translateY(${translate === 'none' ? none : ((-translate * 5) + 10)}vh)`,
+        transform: `translateY(${translate === 'none' ? 'none' : ((-translate * 5) + 10)}vh)`,
         ...styles
       }}
     >
