@@ -10,7 +10,7 @@ import { nextStep, previousStep } from '../../services';
 
 const Notes = React.createClass({
   propTypes: {
-    note: PropTypes.string
+    note: PropTypes.oneOfType([PropTypes.string, PropTypes.element])
   },
 
   next() {
