@@ -50452,9 +50452,9 @@
 	  }
 	});
 
-	console.log(window.__DEV__);
+	console.log(("ghpages"));
 
-	var base = window.__DEV__ === 'ghpages' ? '/code-step' : '/';
+	var base =  true ? '/code-step' : '/';
 
 	var Routes = _react2.default.createElement(
 	  _reactRouter.Route,
