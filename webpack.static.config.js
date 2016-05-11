@@ -2,7 +2,7 @@
 
 var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
-var ReactToHtmlPlugin = require('react-to-html-webpack-plugin');
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 var HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
   template: __dirname + '/app/index.html',
@@ -21,13 +21,12 @@ module.exports = {
   output: {
     path: __dirname + '/static',
     filename: 'index_bundle.js',
-    publicPath: './',
-    libraryTarget: 'umd'
+    publicPath: './'
   },
   module: {
     loaders: [
       { test: /\.js$/, exclude: /node_modules/, loader: 'babel-loader' },
-      { test: /\.css$/, loader: "style-loader!css-loader" },
+      { test: /\.css$/, loader: ExtractTextPlugin.extract('style-loader', '!css-loader?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]') },
       { test: /\.png$/, loader: "url-loader?limit=100000" },
       { test: /\.jpg$/, loader: "file-loader" }
     ]
@@ -35,7 +34,7 @@ module.exports = {
   plugins: [
     HtmlWebpackPluginConfig,
     WebpackEnvPlugin,
+    new ExtractTextPlugin('style.css', { allChunks: true }),
     new webpack.optimize.OccurenceOrderPlugin(),
-    new ReactToHtmlPlugin('index.html', 'index_bundle.js')
   ]
 };

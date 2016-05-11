@@ -14,7 +14,7 @@
     "prod": "NODE_ENV=production node build/index.js",
     "start": "npm run clean && npm run build && npm run prod",
     "dev": "node server/index.babel.js",
-    "deploy:static": "npm run clean:client && npm run build:static && gh-pages -d static",
+    "deploy": "npm run clean:client && npm run build:static && gh-pages -d static",
     "storybook": "start-storybook -p 9001"
   },
   "keywords": [],
