@@ -3,13 +3,13 @@
   margin: 0;
 }
 
-.container {
+.styles__container___2eqx2 {
   height: 100vh;
   display: flex;
   flex-direction: row;
 }
 
-.main {
+.styles__main___kaf0B {
   width: 75vw;
   background: #fafafa;
 
@@ -17,7 +17,7 @@
   flex-direction: column;
 }
 
-.codeContainer {
+.styles__codeContainer___1Rke8 {
   flex: 4 1 auto;
   background: #fafafa;
 
@@ -62,27 +62,27 @@ gray-dark-9: #484848
 
 */
 
-.sidebar {
+.styles__sidebar___1pUM5 {
   padding: 1vw;
   width: 25vw;
   overflow: scroll;
   background: #b0b0b0;
 }
 
-.progressBar {
+.styles__progressBar___3KQ2A {
   flex: 1 1 auto;
   overflow: hidden;
   max-width: 10%;
   background: #b8b8b8;
 }
 
-.notes {
+.styles__notes___2lubm {
   flex: 1 1 fit;
   max-height: 25vw;
   background: #d8d8d8;
 }
 
-.code {
+.styles__code___3FaWi {
   flex: 1 1 auto;
 
   margin: 1vw;
