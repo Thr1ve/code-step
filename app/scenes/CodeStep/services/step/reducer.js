@@ -1,4 +1,4 @@
-import { LOAD_STEPS, SET_NEXT_STEP, SET_PREVIOUS_STEP } from './actions';
+import { LOAD_STEPS, SET_NEXT_STEP, SET_PREVIOUS_STEP, SET_STEP } from './actions';
 
 export default function stepReducer(state = {
   loadedSteps: [],
@@ -19,6 +19,11 @@ export default function stepReducer(state = {
       return {
         ...state,
         currentStep: state.currentStep - 1 < 0 ? state.loadedSteps.length - 1 : state.currentStep - 1
+      };
+    case SET_STEP:
+      return {
+        ...state,
+        currentStep: action.n
       };
     default:
       return state;

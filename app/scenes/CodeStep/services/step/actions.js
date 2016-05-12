@@ -13,6 +13,10 @@ export const SET_PREVIOUS_STEP = 'SET_PREVIOUS_STEP';
 export const setPreviousStep = () =>
   ({ type: SET_PREVIOUS_STEP });
 
+export const SET_STEP = 'SET_STEP';
+export const setStep = (n) =>
+  ({ type: SET_STEP, n });
+
 
 export const executeCurrentStep = () => (dispatch, getState) => {
   const { loadedSteps, currentStep } = getState().steps;
@@ -36,5 +40,10 @@ export const nextStep = () => dispatch => {
 
 export const previousStep = () => dispatch => {
   dispatch(setPreviousStep());
+  dispatch(executeCurrentStep());
+};
+
+export const pickStep = (n) => dispatch => {
+  dispatch(setStep(n));
   dispatch(executeCurrentStep());
 };
