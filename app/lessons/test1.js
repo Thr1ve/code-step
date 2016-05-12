@@ -101,6 +101,10 @@ export const steps = [
         This tutorial is not quite complete...but that's ok because {<Clickable>this is clickable</Clickable>} (check your console)
       </div>
     )
+  }, {
+    highlighted: [24, 25, 26, 27, 28, 29, 30, 31, 32],
+  }, {
+    highlighted: [34],
   },
 ];
 
