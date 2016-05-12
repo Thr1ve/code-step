@@ -74,12 +74,17 @@ gray-dark-9: #484848
   overflow: hidden;
   max-width: 10%;
   background: #b8b8b8;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 }
 
 .styles__notes___2lubm {
   flex: 1 1 fit;
   max-height: 25vw;
   background: #d8d8d8;
+  padding: 10px;
 }
 
 .styles__code___3FaWi {
