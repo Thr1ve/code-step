@@ -4,4 +4,8 @@
   overflow: hidden;
   max-width: 10%;
   background: #b8b8b8;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 }
