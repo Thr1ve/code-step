@@ -68,6 +68,11 @@ gray-dark-9: #484848
   overflow: scroll;
   background: #b0b0b0;
 }
+.styles__stepIconStyles___3COEO {
+  border: 1px dotted #202020;
+  border-radius: 40%;
+  padding: 1vh 1vw;
+}
 
 .styles__progressBar___3KQ2A {
   flex: 1 1 auto;
@@ -78,6 +83,7 @@ gray-dark-9: #484848
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  align-items: center;
 }
 
 .styles__notes___2lubm {
