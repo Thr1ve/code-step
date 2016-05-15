@@ -31,6 +31,9 @@ module.exports = {
       { test: /\.jpg$/, loader: "file-loader" }
     ]
   },
+  resolve:{
+    modulesDirectories: ['app', 'node_modules'],
+  },
   plugins: [
     HtmlWebpackPluginConfig,
     WebpackEnvPlugin,
