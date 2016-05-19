@@ -1,23 +1,29 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import { sidebar } from './styles.css';
 
-const dummyVariableTrackerData = (
-`x: y
+import Visualiser from 'components/Visualiser';
 
-aString: asdfasdfasdfasdfasdfasdfasdfasdfasdfasdf
-
-y: 60000000`);
+import { setScopes } from '../../services';
 
 const SideBar = React.createClass({
   render() {
+    const { scopes } = this.props;
     return (
       <div className={sidebar}>
-        <pre>
-          {dummyVariableTrackerData}
-        </pre>
+        <Visualiser
+          data={scopes}
+          useHljs='false'
+        />
       </div>
     );
   }
 });
 
-export default SideBar;
+function mapStateToProps(state) {
+  return {
+    scopes: state.scopes
+  };
+}
+
+export default connect(mapStateToProps)(SideBar);
