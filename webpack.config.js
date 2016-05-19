@@ -1,7 +1,9 @@
 /* eslint-disable */
 
+var chalk = require('chalk')
 var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
+var ProgressBarPlugin = require('progress-bar-webpack-plugin');
 
 var HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
   template: __dirname + '/app/index.html',
@@ -38,6 +40,10 @@ module.exports = {
   plugins: [
     HtmlWebpackPluginConfig,
     WebpackEnvPlugin,
+    new ProgressBarPlugin({
+      format: `building... [${chalk.green(':bar')}] ${chalk.magenta.bold(':percent')} (${chalk.yellow.bold(':elapsed seconds')})`,
+      clear: true
+    }),
     new webpack.optimize.OccurenceOrderPlugin(),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoErrorsPlugin()
