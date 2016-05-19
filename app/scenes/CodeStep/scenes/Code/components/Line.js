@@ -14,7 +14,7 @@ const Line = ({ lineNumber, text, highlighted, vw = 1 }) => {
           translateY(${highlighted ? 0.5 : 0}px)
           translateX(${highlighted ? 7 : 0}px)
           translateZ(${highlighted ? 3 : -5}px)
-          `,
+        `,
         ...styles
       }}
     >

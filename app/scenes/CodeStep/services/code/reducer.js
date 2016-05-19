@@ -12,7 +12,7 @@ export default function codeReducer(state = {
         lines: state.lines.map((line, i) =>
           ({
             ...line,
-            highlighted: action.lines[i + 1] ? true : false
+            highlighted: !!action.lines[i + 1]
           })
         )
       };
