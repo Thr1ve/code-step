@@ -6,3 +6,6 @@ This project uses the file-structure laid out in [this post](https://medium.com/
   - A scene can define nested components, scenes or services.
   - A service can define nested services. It cannot use or define a component or a scene.
   - Nested entities can only use other entities that are defined by a parent entity.
+
+### Credits:
+  - the Visualizer component is taken from Joel Auterson's phenomenal project, kajero ( https://github.com/JoelOtter/kajero )
