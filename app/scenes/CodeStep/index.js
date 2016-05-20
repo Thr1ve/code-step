@@ -10,7 +10,7 @@ import ProgressBar from './scenes/ProgressBar';
 import Notes from './scenes/Notes';
 import Code from './scenes/Code';
 
-import lesson from '../../lessons/test1';
+import lesson from '../../../lessons/test1';
 const { code, steps } = lesson;
 
 const Layout = React.createClass({
