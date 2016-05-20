@@ -1,0 +1,34 @@
+/* Colors: https://github.com/johnotander/gray */
+
+@value grayLight0: #a0a0a0;
+@value grayLight1: #a8a8a8;
+@value grayLight2: #b0b0b0;
+@value grayLight3: #b8b8b8;
+@value grayLight4: #c0c0c0;
+@value grayLight5: #d8d8d8;
+@value grayLight6: #e0e0e0;
+@value grayLight7: #e8e8e8;
+@value grayLight8: #fafafa;
+@value grayLight9: #fff;
+
+@value grayMid0: #606060;
+@value grayMid1: #666;
+@value grayMid2: #707070;
+@value grayMid3: #777;
+@value grayMid4: #808080;
+@value grayMid5: #888;
+@value grayMid6: #909090;
+@value grayMid7: #999;
+@value grayMid8: #a0a0a0;
+@value grayMid9: #a8a8a8;
+
+@value grayDark0: #080808;
+@value grayDark1: #101010;
+@value grayDark2: #1a1a1a;
+@value grayDark3: #202020;
+@value grayDark4: #222;
+@value grayDark5: #282828;
+@value grayDark6: #333;
+@value grayDark7: #383838;
+@value grayDark8: #444;
+@value grayDark9: #484848;

@@ -4,6 +4,7 @@ var chalk = require('chalk')
 var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var ProgressBarPlugin = require('progress-bar-webpack-plugin');
+var values = require('postcss-modules-values');
 
 var HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
   template: __dirname + '/app/index.html',
@@ -29,7 +30,7 @@ module.exports = {
   module: {
     loaders: [
       { test: /\.js$/, exclude: /node_modules/, loader: 'babel-loader' },
-      {test: /\.css$/, loader: 'style-loader!css-loader?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]'},
+      {test: /\.css$/, loader: 'style-loader!css-loader?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]!postcss-loader'},
       { test: /\.png$/, loader: "url-loader?limit=100000" },
       { test: /\.jpg$/, loader: "file-loader" },
     ]
@@ -37,6 +38,9 @@ module.exports = {
   resolve:{
     modulesDirectories: ['app', 'node_modules'],
   },
+  postcss: [
+    values
+  ],
   plugins: [
     HtmlWebpackPluginConfig,
     WebpackEnvPlugin,
