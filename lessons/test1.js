@@ -66,7 +66,7 @@ export const steps = [
     highlighted: [],
     note: () => (
       <div>
-        Hello! Click Next / Previous to step through the lesson. The code for this lesson can be found {<a target="_blank" href="https://github.com/Thr1ve/code-step/blob/master/app/lessons/test1.js">here</a>}
+        Hello! Click Next / Previous to step through the lesson. The code for this lesson can be found {<a target="_blank" href="https://github.com/Thr1ve/code-step/blob/master/lessons/test1.js">here</a>}
       </div>
     ),
     scopes: {
