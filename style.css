@@ -1,17 +1,19 @@
+/* Colors: https://github.com/johnotander/gray */
 * {
   box-sizing: border-box;
   margin: 0;
+  color: #1a1a1a;
 }
 
 .styles__container___2eqx2 {
   height: 100vh;
   display: flex;
   flex-direction: row;
+  background: #fafafa;
 }
 
 .styles__main___kaf0B {
   width: 75vw;
-  background: #fafafa;
 
   display: flex;
   flex-direction: column;
@@ -19,83 +21,61 @@
 
 .styles__codeContainer___1Rke8 {
   flex: 4 1 auto;
-  background: #fafafa;
 
   display: flex;
 }
-
-
-/* Colors: https://github.com/johnotander/gray
-
-gray-light-0: #a0a0a0
-gray-light-1: #a8a8a8
-gray-light-2: #b0b0b0
-gray-light-3: #b8b8b8
-gray-light-4: #c0c0c0
-gray-light-5: #d8d8d8
-gray-light-6: #e0e0e0
-gray-light-7: #e8e8e8
-gray-light-8: #fafafa
-gray-light-9: #fff
-
-gray-mid-0: #606060
-gray-mid-1: #666
-gray-mid-2: #707070
-gray-mid-3: #777
-gray-mid-4: #808080
-gray-mid-5: #888
-gray-mid-6: #909090
-gray-mid-7: #999
-gray-mid-8: #a0a0a0
-gray-mid-9: #a8a8a8
-
-gray-dark-0: #080808
-gray-dark-1: #101010
-gray-dark-2: #1a1a1a
-gray-dark-3: #202020
-gray-dark-4: #222
-gray-dark-5: #282828
-gray-dark-6: #333
-gray-dark-7: #383838
-gray-dark-8: #444
-gray-dark-9: #484848
-
-*/
-
 .styles__sidebar___1pUM5 {
+  font-family: "Roboto Mono", monospace;
   padding: 1vw;
   width: 25vw;
   overflow: scroll;
-  background: #b0b0b0;
+  background: #c0c0c0;
+  margin: 10px;
+}
+.styles__visualiser___3Yj1X {
+  font-family: 'Roboto Mono', monospace;
+  font-size: .8em;
+  white-space: pre;
+  overflow: auto;
+}
+.styles__visualiser___3Yj1X .styles__visualiserSpacing___3ymPB {
+  cursor: default;
+}
+.styles__visualiser___3Yj1X .styles__visualiserArrow___3rS4G {
+  cursor: pointer;
+}
+.styles__visualiser___3Yj1X .styles__visualiserRow___3qGoJ {
+  display: inline-block;
 }
 .styles__stepIconStyles___3COEO {
-  border: 1px dotted #202020;
-  border-radius: 40%;
-  padding: 1vh 1vw;
+  background: #c0c0c0;
+  padding: 0.8vh 0.8vw;
+  color: #1a1a1a;
 }
-
 .styles__progressBar___3KQ2A {
   flex: 1 1 auto;
   overflow: hidden;
   max-width: 10%;
-  background: #b8b8b8;
 
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
+  margin: 10px;
 }
-
 .styles__notes___2lubm {
+  font-family: 'Roboto', sans-serif;
   flex: 1 1 fit;
   max-height: 25vw;
-  background: #d8d8d8;
+  background: #c0c0c0;
   padding: 10px;
+  margin: 10px;
 }
-
 .styles__code___3FaWi {
   flex: 1 1 auto;
 
-  margin: 1vw;
+  background: #e0e0e0;
+  margin: 10px;
+  padding: 5px;
   overflow: hidden;
 }
