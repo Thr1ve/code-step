@@ -1,5 +1,7 @@
+@value dark, darkerBackground from "styles/colors.css";
+
 .stepIconStyles {
-  border: 1px dotted #202020;
-  border-radius: 40%;
-  padding: 1vh 1vw;
+  background: darkerBackground;
+  padding: 0.8vh 0.8vw;
+  color: dark;
 }

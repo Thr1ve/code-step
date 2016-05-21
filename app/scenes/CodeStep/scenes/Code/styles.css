@@ -1,7 +1,10 @@
+@value mediumBackground from "styles/colors.css";
 
 .code {
   flex: 1 1 auto;
 
-  margin: 1vw;
+  background: mediumBackground;
+  margin: 10px;
+  padding: 5px;
   overflow: hidden;
 }

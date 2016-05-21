@@ -8,7 +8,6 @@ const StepIcon = ({ step, onClick, isCurrent }) => {
       onClick={onClick}
       style={{
         color: `${isCurrent ? '#fafafa' : 'black'}`,
-        border: `1px ${isCurrent ? 'solid' : 'dotted'} #202020`
       }}
     >
       {step}

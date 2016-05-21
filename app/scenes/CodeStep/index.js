@@ -22,9 +22,9 @@ const Layout = React.createClass({
   render() {
     return (
       <div className={styles.container}>
+        <ProgressBar />
         <div className={styles.main}>
           <div className={styles.codeContainer}>
-            <ProgressBar />
             <Code />
           </div>
           <Notes />

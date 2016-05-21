@@ -1,7 +1,10 @@
+@value darkerBackground from "styles/colors.css";
 
 .sidebar {
+  font-family: "Roboto Mono", monospace;
   padding: 1vw;
   width: 25vw;
   overflow: scroll;
-  background: #b0b0b0;
+  background: darkerBackground;
+  margin: 10px;
 }

@@ -8,7 +8,8 @@ const Line = ({ lineNumber, text, highlighted, vw = 1 }) => {
   return (
     <div
       style={{
-        opacity: `${highlighted ? 1 : 0.5}`,
+        fontFamily: 'inherit',
+        opacity: `${highlighted ? 1 : 0.6}`,
         fontSize: `${vw}vw`,
         transform: `
           translateY(${highlighted ? 0.5 : 0}px)

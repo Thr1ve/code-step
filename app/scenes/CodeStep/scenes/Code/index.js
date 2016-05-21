@@ -17,6 +17,7 @@ const Code = ({ lines, offset, longestLineLength, currentStep }) => (
   <div className={styles.code}>
     <div>
       <pre style={{
+        fontFamily: '"Roboto Mono", monospace',
         perspective: '1000px',
         transition: 'transform 0.4s',
         transform: `

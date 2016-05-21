@@ -32,3 +32,12 @@
 @value grayDark7: #383838;
 @value grayDark8: #444;
 @value grayDark9: #484848;
+
+@value dark: grayDark2;
+
+@value primary: grayMid1;
+@value accent: grayMid7;
+
+@value lighterBackground: grayLight8;
+@value mediumBackground: grayLight6;
+@value darkerBackground: grayLight4;

@@ -1,7 +1,10 @@
+@value darkerBackground from "styles/colors.css";
 
 .notes {
+  font-family: 'Roboto', sans-serif;
   flex: 1 1 fit;
   max-height: 25vw;
-  background: #d8d8d8;
+  background: darkerBackground;
   padding: 10px;
+  margin: 10px;
 }
