@@ -51074,7 +51074,7 @@
 	      'Hello! Click Next / Previous to step through the lesson. The code for this lesson can be found ',
 	      _react2.default.createElement(
 	        'a',
-	        { target: '_blank', href: 'https://github.com/Thr1ve/code-step/blob/master/app/lessons/test1.js' },
+	        { target: '_blank', href: 'https://github.com/Thr1ve/code-step/blob/master/lessons/test1.js' },
 	        'here'
 	      )
 	    );
