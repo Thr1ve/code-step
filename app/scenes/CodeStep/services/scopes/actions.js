@@ -5,10 +5,12 @@ export const setScopes = scopesObj =>
   ({ type: SET_SCOPES, scopesObj });
 
 export function processScopes(steps) {
-  let scopes = {};
-  return steps.reduce((prev, cur) => {
-    scopes = deepAssign(scopes, cur.scopes || {});
-    prev.push({ ...cur, scopes });
-    return prev;
-  }, []);
+  let context = {};
+  return steps.map((step) => {
+    if (typeof step.scopes === 'function') {
+      step.scopes.call(context);
+    }
+
+    return { ...step, scopes: deepAssign({}, context) };
+  });
 }
