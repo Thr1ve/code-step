@@ -50,36 +50,38 @@ const Clickable = React.createClass({
 });
 
 // Here's our array of "steps"!
-// A step is simply an object that specifies...
+// A "step" is simply an object that specifies...
 //   - what lines should be highlighted in the code
 //   - what the displayed note will be
 //   - what the scopes object in the side-bar should contain
 export const steps = [
   {
+    // "highlighted" in step one is an empty array, so no lines will be highlited.
     highlighted: [],
-    // our "note" property can be a function that returns JSX
+    // "note" can be a function that returns JSX
     note: () => (
       <div>
         Hello! Click Next / Previous to step through the lesson. The code for this lesson can be found {<a target="_blank" href="https://github.com/Thr1ve/code-step/blob/master/lessons/test1.js">here</a>}
       </div>
     ),
+    // "scopes" is a function that tells code-step how to update / change our tracked scopes that are displayed on the right-hand side-bar
     scopes() {
       this.global = {};
     }
   }, {
     highlighted: [1],
-    // our "note" property also has the current application state and the dispatch function available as parameters if you want!
+    // when "note" is a function, it also has the current application state and the dispatch function available as parameters if you want! Additionally, "note" can also return a string instead of JSX.
     note: (state, dispatch) => {
       console.log(state);
       return `This line of code creates a new ${typeof state === 'object' ? 'Date' : 'BOOLEAN, BROSEPH'}!`;
     },
-    // We only need to describe what is new/changed for our scopes property; code-step will take care of the rest
+    // We only need to update what is new/changed for in "scopes"; code-step will take care of the rest
     scopes() {
       this.global.today = new Date();
     }
   }, {
     highlighted: [2],
-    // We can also make our note property a simple string!
+    // "note" can also be a simple string!
     note: `Here, we grab the day of the week as a number from the Date we made in line 1; since today is ${moment().format('dddd')}, our "day" variable will be assigned the value ${moment().day()} `,
     scopes() {
       this.global.day = moment().day();
