@@ -2,6 +2,7 @@ import React from 'react';
 import moment from 'moment';
 
 
+// Here's the code that gets displayed! It's just a simple string.
 // source: http://www.w3resource.com/javascript-exercises/javascript-basic-exercise-1.php
 export const code = (`var today = new Date();
 var day = today.getDay();
@@ -38,32 +39,27 @@ if (hour === 0 && prepend === ' AM ') {
 
 console.log('Current Time : ' + hour + prepend + ' : ' + minute + ' : ' + second);`);
 
+// here's a really simple React component that we will use below in our steps
 const Clickable = React.createClass({
   onClick() {
     console.log(`hello from "${this.props.children}"`);
   },
-
   render() {
     return <span style={{ color: '#fafafa' }} onClick={this.onClick}>{this.props.children}</span>;
   }
 });
 
-// Idea: we could dispatch an event that would concat steps into
-// our current steps array...this way we could load different
-// paths depending on user input by doing
-// something like `dispatch(continue(pathA))`
-
-// Idea: Find a way to highlight certain lines of
-// the code when a user hovers over, for
-// instance, the words "line 1" in the note?
-
-// ...I could actually just return an array of functions that dispatched actions to update the state...
-
 let today = new Date();
 
+// Here's our array of "steps"!
+// A step is simply an object that specifies...
+//   - what lines should be highlighted in the code
+//   - what the displayed note will be
+//   - what the scopes object in the side-bar should contain
 export const steps = [
   {
     highlighted: [],
+    // our "note" property can be a function that returns JSX
     note: () => (
       <div>
         Hello! Click Next / Previous to step through the lesson. The code for this lesson can be found {<a target="_blank" href="https://github.com/Thr1ve/code-step/blob/master/lessons/test1.js">here</a>}
@@ -74,10 +70,12 @@ export const steps = [
     }
   }, {
     highlighted: [1],
+    // our "note" property also has the current application state and the dispatch function available as parameters if you want!
     note: (state, dispatch) => {
       console.log(state);
       return `This line of code creates a new ${typeof state === 'object' ? 'Date' : 'BOOLEAN, BROSEPH'}!`;
     },
+    // We only need to describe what is new/changed for our scopes property; code-step will take care of the rest
     scopes: {
       global: {
         today: today
@@ -85,6 +83,7 @@ export const steps = [
     }
   }, {
     highlighted: [2],
+    // We can also make our note property a simple string!
     note: `Here, we grab the day of the week as a number from the Date we made in line 1; since today is ${moment().format('dddd')}, our "day" variable will be assigned the value ${moment().day()} `,
     scopes: {
       global: {
