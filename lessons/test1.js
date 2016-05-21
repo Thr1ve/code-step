@@ -70,8 +70,8 @@ export const steps = [
     }
   }, {
     highlighted: [1],
-    // when "note" is a function, it also has the current application state and the dispatch function available as parameters if you want! Additionally, "note" can also return a string instead of JSX.
-    note: (state, dispatch) => {
+    // when "note" is a function, it also has the dispatch function and the current application state available as parameters if you want! Additionally, "note" can also return a string instead of JSX.
+    note: (dispatch, state) => {
       console.log(state);
       return `This line of code creates a new ${typeof state === 'object' ? 'Date' : 'BOOLEAN, BROSEPH'}!`;
     },
