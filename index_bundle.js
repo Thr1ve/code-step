@@ -50784,12 +50784,12 @@
 	        _react2.default.createElement(
 	          'div',
 	          { onClick: previous, className: _styles2.default.button },
-	          'previous'
+	          'previous [k]'
 	        ),
 	        _react2.default.createElement(
 	          'div',
 	          { onClick: next, className: _styles2.default.button },
-	          'next'
+	          'next [j]'
 	        )
 	      )
 	    )
