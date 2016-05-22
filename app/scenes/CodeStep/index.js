@@ -5,6 +5,7 @@ import styles from './styles.css';
 
 import { initCode, initSteps } from './services';
 
+import Keybindings from '../../components/Keybindings';
 import SideBar from './scenes/SideBar';
 import ProgressBar from './scenes/ProgressBar';
 import Notes from './scenes/Notes';
@@ -12,6 +13,15 @@ import Code from './scenes/Code';
 import Header from './scenes/Header';
 
 import lesson from '../../../lessons/test1';
+
+import { nextStep, previousStep } from './services';
+
+
+const createKeyMap = dispatch => ({
+  j: () => dispatch(nextStep()),
+  k: () => dispatch(previousStep())
+});
+
 const { code, steps } = lesson;
 
 const Layout = React.createClass({
@@ -22,17 +32,19 @@ const Layout = React.createClass({
 
   render() {
     return (
-      <div className={styles.container}>
-        <ProgressBar />
-        <div className={styles.main}>
-          <Header />
-          <Code />
-          <div className={styles.overlay}>
-            <Notes />
+      <Keybindings keyMap={createKeyMap(this.props.dispatch)}>
+        <div className={styles.container}>
+          <ProgressBar />
+          <div className={styles.main}>
+            <Header />
+            <Code />
+            <div className={styles.overlay}>
+              <Notes />
+            </div>
           </div>
+          <SideBar />
         </div>
-        <SideBar />
-      </div>
+      </Keybindings>
     );
   }
 });
