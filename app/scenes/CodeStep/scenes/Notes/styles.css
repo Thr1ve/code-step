@@ -2,9 +2,12 @@
 
 .notes {
   font-family: 'Roboto', sans-serif;
-  flex: 1 1 fit;
+  flex: 1 1 content;
+
+  opacity: 0.9;
   max-height: 25vw;
   background: darkerBackground;
   padding: 10px;
-  margin: 10px;
+  margin: 5px;
+  margin-bottom: 15%;
 }
