@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 
 import styles from './styles.css';
 
-import { initCode, initSteps } from './services';
+import { initCode, initSteps, nextStep, previousStep } from './services';
 
 import Keybindings from '../../components/Keybindings';
 import SideBar from './scenes/SideBar';
@@ -14,15 +14,13 @@ import Header from './scenes/Header';
 
 import lesson from '../../../lessons/test1';
 
-import { nextStep, previousStep } from './services';
-
+const { code, steps } = lesson;
 
 const createKeyMap = dispatch => ({
   j: () => dispatch(nextStep()),
   k: () => dispatch(previousStep())
 });
 
-const { code, steps } = lesson;
 
 const Layout = React.createClass({
   componentDidMount() {
