@@ -14,15 +14,24 @@
 
 .styles__main___kaf0B {
   width: 75vw;
+  overflow: hidden;
 
   display: flex;
+  position: relative;
   flex-direction: column;
 }
 
-.styles__codeContainer___1Rke8 {
-  flex: 4 1 auto;
+.styles__overlay___3V3fn {
+  position: absolute;
 
   display: flex;
+  justify-content: center;
+  align-items: flex-end;;
+
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
 }
 .styles__sidebar___1pUM5 {
   font-family: "Roboto Mono", monospace;
@@ -66,11 +75,14 @@
 }
 .styles__notes___2lubm {
   font-family: 'Roboto', sans-serif;
-  flex: 1 1 fit;
+  flex: 1 1 content;
+
+  opacity: 0.9;
   max-height: 25vw;
   background: #c0c0c0;
   padding: 10px;
-  margin: 10px;
+  margin: 5px;
+  margin-bottom: 15%;
 }
 .styles__code___3FaWi {
   flex: 1 1 auto;
@@ -79,4 +91,35 @@
   margin: 10px;
   padding: 5px;
   overflow: hidden;
+}
+.styles__header___2KCu_ {
+  font-family: "Roboto Mono", monospace;
+
+  font-size: 12px;
+  flex: 1 1 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  height: 5vh;
+  background: mediumBackground;
+  margin: 10px 10px 0px 10px;
+  padding: 10px 0px 10px 0px;
+  overflow: hidden;
+}
+
+.styles__headerRight___2ykEK {
+  /*border: 1px dotted dark;*/
+  flex: 1 1 auto;
+  z-index: 99;
+  display: flex;
+  justify-content: space-around;
+}
+
+.styles__headerLeft___3QNbL {
+  /*border: 1px dotted dark;*/
+  flex: 1 1 auto;
+  z-index: 99;
+  display: flex;
+  justify-content: flex-start;
 }
