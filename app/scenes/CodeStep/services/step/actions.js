@@ -21,9 +21,10 @@ export const setStep = (n) =>
 
 export const executeCurrentStep = () => (dispatch, getState) => {
   const { loadedSteps, currentStep } = getState().steps;
-  dispatch(updateHighlights(loadedSteps[currentStep].highlighted));
-  dispatch(setScopes(loadedSteps[currentStep].scopes));
-  dispatch(updateNote(loadedSteps[currentStep].note));
+  const { highlighted, scopes, note } = loadedSteps[currentStep];
+  dispatch(updateHighlights(highlighted));
+  dispatch(setScopes(scopes));
+  dispatch(updateNote(note));
 };
 
 export const initSteps = steps => dispatch => {
