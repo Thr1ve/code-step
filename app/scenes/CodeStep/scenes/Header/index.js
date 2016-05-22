@@ -14,10 +14,10 @@ const Header = ({ dispatch }) => {
       <div className={styles.headerRight}>
         <div className={styles.buttonGroup}>
           <div onClick={previous} className={styles.button}>
-            previous
+            previous [k]
           </div>
           <div onClick={next} className={styles.button}>
-            next
+            next [j]
           </div>
         </div>
       </div>
