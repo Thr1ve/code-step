@@ -1,0 +1,33 @@
+@value dark from "styles/colors.css";
+
+.header {
+  font-family: "Roboto Mono", monospace;
+
+  font-size: 12px;
+  flex: 1 1 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  height: 5vh;
+  background: mediumBackground;
+  margin: 10px 10px 0px 10px;
+  padding: 10px 0px 10px 0px;
+  overflow: hidden;
+}
+
+.headerRight {
+  /*border: 1px dotted dark;*/
+  flex: 1 1 auto;
+  z-index: 99;
+  display: flex;
+  justify-content: space-around;
+}
+
+.headerLeft {
+  /*border: 1px dotted dark;*/
+  flex: 1 1 auto;
+  z-index: 99;
+  display: flex;
+  justify-content: flex-start;
+}

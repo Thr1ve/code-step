@@ -9,6 +9,7 @@ import SideBar from './scenes/SideBar';
 import ProgressBar from './scenes/ProgressBar';
 import Notes from './scenes/Notes';
 import Code from './scenes/Code';
+import Header from './scenes/Header';
 
 import lesson from '../../../lessons/test1';
 const { code, steps } = lesson;
@@ -24,10 +25,11 @@ const Layout = React.createClass({
       <div className={styles.container}>
         <ProgressBar />
         <div className={styles.main}>
-          <div className={styles.codeContainer}>
-            <Code />
+          <Header />
+          <Code />
+          <div className={styles.overlay}>
+            <Notes />
           </div>
-          <Notes />
         </div>
         <SideBar />
       </div>
