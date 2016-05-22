@@ -43,4 +43,5 @@
 .button {
   /*border: 1px dotted dark;*/
   flex: 1 1 fit;
+  cursor: pointer;
 }
