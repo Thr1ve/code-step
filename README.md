@@ -8,4 +8,4 @@ This project uses the file-structure laid out in [this post](https://medium.com/
   - Nested entities can only use other entities that are defined by a parent entity.
 
 ### Credits:
-  - the Visualizer component is taken from Joel Auterson's phenomenal project, kajero ( https://github.com/JoelOtter/kajero )
+  - the Visualizer component is taken from [Joel Auterson](https://github.com/JoelOtter)'s phenomenal project, [kajero]( https://github.com/JoelOtter/kajero )
