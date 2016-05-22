@@ -12,11 +12,13 @@ const Header = ({ dispatch }) => {
         menu
       </div>
       <div className={styles.headerRight}>
-        <div onClick={previous}>
-          previous
-        </div>
-        <div onClick={next}>
-          next
+        <div className={styles.buttonGroup}>
+          <div onClick={previous} className={styles.button}>
+            previous
+          </div>
+          <div onClick={next} className={styles.button}>
+            next
+          </div>
         </div>
       </div>
     </div>

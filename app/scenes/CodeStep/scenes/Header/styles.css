@@ -21,7 +21,7 @@
   flex: 1 1 auto;
   z-index: 99;
   display: flex;
-  justify-content: space-around;
+  justify-content: flex-end;
 }
 
 .headerLeft {
@@ -30,4 +30,17 @@
   z-index: 99;
   display: flex;
   justify-content: flex-start;
+}
+
+.buttonGroup {
+  flex: 1 1 auto;
+  /*border: 1px dotted dark;*/
+  max-width: 50%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.button {
+  /*border: 1px dotted dark;*/
+  flex: 1 1 fit;
 }
