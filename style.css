@@ -113,7 +113,7 @@
   flex: 1 1 auto;
   z-index: 99;
   display: flex;
-  justify-content: space-around;
+  justify-content: flex-end;
 }
 
 .styles__headerLeft___3QNbL {
@@ -122,4 +122,17 @@
   z-index: 99;
   display: flex;
   justify-content: flex-start;
+}
+
+.styles__buttonGroup___3rsVP {
+  flex: 1 1 auto;
+  /*border: 1px dotted dark;*/
+  max-width: 50%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.styles__button___2iSay {
+  /*border: 1px dotted dark;*/
+  flex: 1 1 fit;
 }

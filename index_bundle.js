@@ -50713,13 +50713,17 @@
 	      { className: _styles2.default.headerRight },
 	      _react2.default.createElement(
 	        'div',
-	        { onClick: previous },
-	        'previous'
-	      ),
-	      _react2.default.createElement(
-	        'div',
-	        { onClick: next },
-	        'next'
+	        { className: _styles2.default.buttonGroup },
+	        _react2.default.createElement(
+	          'div',
+	          { onClick: previous, className: _styles2.default.button },
+	          'previous'
+	        ),
+	        _react2.default.createElement(
+	          'div',
+	          { onClick: next, className: _styles2.default.button },
+	          'next'
+	        )
 	      )
 	    )
 	  );
@@ -62993,7 +62997,7 @@
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
-	module.exports = {"dark":"#1a1a1a","header":"styles__header___2KCu_","headerRight":"styles__headerRight___2ykEK","headerLeft":"styles__headerLeft___3QNbL"};
+	module.exports = {"dark":"#1a1a1a","header":"styles__header___2KCu_","headerRight":"styles__headerRight___2ykEK","headerLeft":"styles__headerLeft___3QNbL","buttonGroup":"styles__buttonGroup___3rsVP","button":"styles__button___2iSay"};
 
 /***/ },
 /* 566 */
