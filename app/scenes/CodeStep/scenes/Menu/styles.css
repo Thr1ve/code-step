@@ -1,0 +1,16 @@
+@value lighterBackground, dark from "styles/colors.css";
+
+.menu {
+  position: fixed;
+  z-index: 9999999;
+
+  background: lighterBackground;
+  box-shadow: 2px 2px 2px dark;
+
+
+  width: 60vw;
+  left: 20vw;
+
+  height: 80vh;
+  bottom: 10vh;
+}

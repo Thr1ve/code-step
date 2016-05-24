@@ -5,12 +5,14 @@ import code from './code/reducer';
 import steps from './step/reducer';
 import note from './notes/reducer';
 import scopes from './scopes/reducer';
+import menu from './menu/reducer';
 
 const rootReducer = combineReducers({
   code,
   steps,
   note,
-  scopes
+  scopes,
+  menu
 });
 
 export default rootReducer;

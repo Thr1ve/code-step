@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
 
-import { nextStep, previousStep } from '../../services';
+import { nextStep, previousStep, toggleMenu } from '../../services';
 
 import styles from './styles.css';
 
@@ -9,7 +9,7 @@ const Header = ({ dispatch }) => {
   return (
     <div className={styles.header}>
       <div onClick={menu} className={styles.headerLeft}>
-        menu
+        menu [esc]
       </div>
       <div className={styles.headerRight}>
         <div className={styles.buttonGroup}>
@@ -25,9 +25,7 @@ const Header = ({ dispatch }) => {
   );
 
   function menu() {
-    // TODO: create menu and menuToggle
-    // dispatch(menuToggle());
-    console.log('there is no menu yet. Sorry!');
+    dispatch(toggleMenu());
   }
 
   function next() {
