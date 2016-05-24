@@ -22,7 +22,7 @@ const SideBar = React.createClass({
 
 function mapStateToProps(state) {
   return {
-    scopes: state.scopes
+    scopes: state.codeStep.scopes
   };
 }
 

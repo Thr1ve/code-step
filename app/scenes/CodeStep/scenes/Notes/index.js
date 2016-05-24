@@ -13,6 +13,6 @@ Notes.propTypes = {
   note: PropTypes.oneOfType([PropTypes.string, PropTypes.element])
 };
 
-const mapStateToProps = (state) => ({ note: state.note.current });
+const mapStateToProps = (state) => ({ note: state.codeStep.note.current });
 
 export default connect(mapStateToProps)(Notes);

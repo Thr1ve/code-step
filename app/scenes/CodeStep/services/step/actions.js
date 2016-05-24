@@ -20,7 +20,7 @@ export const setStep = (n) =>
 
 
 export const executeCurrentStep = () => (dispatch, getState) => {
-  const { loadedSteps, currentStep } = getState().steps;
+  const { loadedSteps, currentStep } = getState().codeStep.steps;
   const { highlighted, scopes, note } = loadedSteps[currentStep];
   dispatch(updateHighlights(highlighted));
   dispatch(setScopes(scopes));

@@ -45,7 +45,7 @@ Code.propTypes = {
 
 
 const mapStateToProps = (state) => {
-  const { lines, highlightedLines } = state.code;
+  const { lines, highlightedLines } = state.codeStep.code;
   const offset = highlightedLines.length &&
     highlightedLines.reduce((prev, cur) => prev + cur) / highlightedLines.length;
 
@@ -53,7 +53,7 @@ const mapStateToProps = (state) => {
   return {
     lines,
     offset,
-    currentStep: state.steps.currentStep,
+    currentStep: state.codeStep.steps.currentStep,
     longestLineLength: lines.length === 0 ? 0 : lines.reduce((prev, cur) =>
       (prev.text.length > cur.text.length ? prev : cur)).text.length
   };

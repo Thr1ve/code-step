@@ -6,7 +6,7 @@ export const setNote = note =>
 
 export const updateNote = note => (dispatch, getState) => {
   if (typeof note === 'function') {
-    note = note(dispatch, getState()); // eslint-disable-line
+    note = note(dispatch, getState().codeStep); // eslint-disable-line
   }
   return dispatch(setNote(reactify(note)));
 };

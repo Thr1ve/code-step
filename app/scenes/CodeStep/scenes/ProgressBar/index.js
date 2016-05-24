@@ -39,7 +39,7 @@ const ProgressBar = React.createClass({
 
 
 const mapStateToProps = (state) => {
-  const { currentStep, loadedSteps } = state.steps;
+  const { currentStep, loadedSteps } = state.codeStep.steps;
   return {
     currentStep: currentStep + 1,
     totalSteps: loadedSteps.length
