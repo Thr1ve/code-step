@@ -1,8 +1,8 @@
 import React from 'react';
 
-import styles from './styles.css';
+// import styles from './styles.css';
 
-import Controller from './ControlPanel';
+import ControlPanel from './ControlPanel';
 
 const TransformTester = React.createClass({
   getInitialState() {
@@ -20,9 +20,7 @@ const TransformTester = React.createClass({
   render() {
     return (
       <div>
-        <div className={styles.header}>
-        </div>
-        <Controller snapShot={this.snapShot} />
+        <ControlPanel snapShot={this.snapShot} />
       </div>
     );
   }

@@ -40,7 +40,7 @@ const Header = ({ dispatch }) => {
 };
 
 Header.propTypes = {
-  dispatch: PropTypes.function
+  dispatch: PropTypes.func
 };
 
 
