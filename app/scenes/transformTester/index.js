@@ -2,7 +2,7 @@ import React from 'react';
 
 import styles from './styles.css';
 
-import Controller from './Controller';
+import Controller from './ControlPanel';
 
 const TransformTester = React.createClass({
   getInitialState() {
