@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react';
 
 import Slider, { StandardSlider, DegreesSlider } from './components/Slider';
-import TransformBox from './TransformBox';
+import TransformBox from './components/TransformBox';
 
 import styles from './styles.css';
 
