@@ -19,3 +19,4 @@
  - create standardized interface for asking the user a question and storing their answer
  - let steps dispatch an event that would concat steps into our current steps array...this way we could load different paths depending on user input by doing something like `dispatch(continue(pathA))`
  - We could actually just return an array of functions as our steps that dispatched actions to update the state
+ - make the notes component a fixed element that can be morphed and moved with css translations/transitions. A box that can expand to encompass the entire view if we need to display a graph, then shrink back down and out of the way of our highlighted lines to display the note.
