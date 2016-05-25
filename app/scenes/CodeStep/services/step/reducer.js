@@ -8,7 +8,8 @@ export default function stepReducer(state = {
     case LOAD_STEPS:
       return {
         ...state,
-        loadedSteps: action.steps
+        loadedSteps: action.steps,
+        currentStep: 0
       };
     case SET_NEXT_STEP:
       return {
