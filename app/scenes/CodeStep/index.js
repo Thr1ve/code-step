@@ -10,12 +10,14 @@ import Notes from './scenes/Notes';
 import Code from './scenes/Code';
 import Header from './scenes/Header';
 import Menu from './scenes/Menu';
+import CodeSelect from './scenes/CodeSelect';
 
-import { initCode, initSteps, nextStep, previousStep, toggleMenu } from './services';
+import { nextStep, previousStep, toggleMenu, loadLessons } from './services';
 
-import lesson from '../../../lessons/test1';
+import test1 from '../../../lessons/test1';
+import inceptionTest1 from '../../../lessons/inceptionTest1';
 
-const { code, steps } = lesson;
+const lessons = { test1, inceptionTest1 };
 
 const createKeyMap = dispatch => ({
   j: () => dispatch(nextStep()),
@@ -23,11 +25,9 @@ const createKeyMap = dispatch => ({
   esc: () => dispatch(toggleMenu())
 });
 
-
 const Layout = React.createClass({
   componentDidMount() {
-    this.props.dispatch(initCode(code.split('\n')));
-    this.props.dispatch(initSteps(steps));
+    this.props.dispatch(loadLessons(lessons));
   },
 
   render() {
@@ -38,9 +38,9 @@ const Layout = React.createClass({
           <ProgressBar />
           <div className={styles.main}>
             <Header />
-            <Code />
+            {this.props.currentLesson !== '__NONE__' ? <Code /> : <CodeSelect />}
             <div className={styles.overlay}>
-              <Notes />
+                <Notes />
             </div>
           </div>
           <SideBar />
@@ -50,4 +50,10 @@ const Layout = React.createClass({
   }
 });
 
-export default connect()(Layout);
+function mapStateToProps(state) {
+  return {
+    currentLesson: state.codeStep.lessons.current
+  };
+}
+
+export default connect(mapStateToProps)(Layout);

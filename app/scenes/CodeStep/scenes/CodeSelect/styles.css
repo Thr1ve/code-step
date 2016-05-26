@@ -1,0 +1,15 @@
+@value mediumBackground from "styles/colors.css";
+
+.container {
+  flex: 1 1 auto;
+  z-index: 9999999999998;
+
+  min-height: 20vh;
+  background: mediumBackground;
+  margin: 10px;
+  padding: 5px;
+}
+
+.button {
+  z-index: 9999999999999;
+}

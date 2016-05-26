@@ -3,12 +3,19 @@ import { connect } from 'react-redux';
 
 import styles from './styles.css';
 
-const Menu = ({ visible }) => (
+import { setCurrentLesson } from '../../services';
+
+const Menu = ({ visible, dispatch }) => (
   <div
     className={styles.menu}
     style={{ display: `${visible ? 'flex' : 'none'}` }}
   >
     It's a Menu
+    <div
+      onClick={() => dispatch(setCurrentLesson('__NONE__'))}
+    >
+      select new lesson
+    </div>
   </div>
 );
 
