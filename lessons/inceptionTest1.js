@@ -51,9 +51,6 @@ const Clickable = React.createClass({
 
 const createClickable = (text) => <Clickable>{text}</Clickable>;
 
-// Idea: we could dispatch an event that would concat steps into our current steps array...this way we could load different paths depending on user input by doing something like \`dispatch(continue(pathA))\`
-
-// Idea: Find a way to highlight certain lines of the code when a user hovers over, for instance, the words "line 1" in the note?
 export const steps = [
   {
     highlighted: [1],
@@ -74,10 +71,10 @@ export const steps = [
     note: \`Here, we log out "Today is: \${moment().format('dddd')}" to the console. Since we stored \${moment().day()} in our variable "day", we can use it to get the value at the \${moment().format('do')} index of our "daylist" array.\`
   }, {
     highlighted: [7, 8, 9],
-    note: 'Now, lets store the current hour, minute, and second in variables as numbers so we can use them below'
+    note: 'Now, lets store the current hour, min...'
   }, {
     highlighted: [10],
-    note: 'Next, we\'ll create a variable "prepend" that will help us decide whether to print out "AM" or "PM" below'
+    note: 'Next, we\'ll create a variable "prepend" that will...'
   }, {
     highlighted: [12],
     note: 'Since the "hours" variable is the hour as it would be in military time (1-24 instead of 1-12), we need to turn it into an hour we\'d expect to see on our clock'
