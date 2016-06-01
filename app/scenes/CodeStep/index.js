@@ -10,9 +10,8 @@ import Notes from './scenes/Notes';
 import Code from './scenes/Code';
 import Header from './scenes/Header';
 import Menu from './scenes/Menu';
-import CodeSelect from './scenes/CodeSelect';
 
-import { nextStep, previousStep, toggleMenu, loadLessons } from './services';
+import { up, down, toggleMenu, loadLessons } from './services';
 
 import test1 from '../../../lessons/test1';
 import inceptionTest1 from '../../../lessons/inceptionTest1';
@@ -20,8 +19,8 @@ import inceptionTest1 from '../../../lessons/inceptionTest1';
 const lessons = { test1, inceptionTest1 };
 
 const createKeyMap = dispatch => ({
-  j: () => dispatch(nextStep()),
-  k: () => dispatch(previousStep()),
+  j: () => dispatch(up()),
+  k: () => dispatch(down()),
   esc: () => dispatch(toggleMenu())
 });
 
@@ -38,9 +37,9 @@ const Layout = React.createClass({
           <ProgressBar />
           <div className={styles.main}>
             <Header />
-            {this.props.currentLesson !== '__NONE__' ? <Code /> : <CodeSelect />}
+            {this.props.currentLesson !== '__NONE__' ? <Code /> : <div> No lesson loaded </div>}
             <div className={styles.overlay}>
-                <Notes />
+              <Notes />
             </div>
           </div>
           <SideBar />

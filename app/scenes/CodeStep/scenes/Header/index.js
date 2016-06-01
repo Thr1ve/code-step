@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
 
-import { nextStep, previousStep, toggleMenu } from '../../services';
+import { up, down, toggleMenu } from '../../services';
 
 import styles from './styles.css';
 
@@ -29,11 +29,11 @@ const Header = ({ dispatch }) => {
   }
 
   function next() {
-    dispatch(nextStep());
+    dispatch(up());
   }
 
   function previous() {
-    dispatch(previousStep());
+    dispatch(down());
   }
 };
 

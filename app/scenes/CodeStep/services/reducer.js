@@ -7,6 +7,7 @@ import note from './notes/reducer';
 import scopes from './scopes/reducer';
 import menu from './menu/reducer';
 import lessons from './lessons/reducer';
+import nav from './nav/reducer';
 
 const rootReducer = combineReducers({
   code,
@@ -14,7 +15,8 @@ const rootReducer = combineReducers({
   note,
   scopes,
   menu,
-  lessons
+  lessons,
+  nav
 });
 
 export default rootReducer;

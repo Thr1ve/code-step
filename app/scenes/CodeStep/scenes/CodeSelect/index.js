@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import { startLesson, setCurrentLesson } from '../../services';
+import { startLesson, setCurrentLesson, toggleMenu } from '../../services';
 
 import styles from './styles.css';
 
@@ -10,6 +10,7 @@ const CodeSelect = React.createClass({
     return () => {
       this.props.dispatch(setCurrentLesson(name));
       this.props.dispatch(startLesson());
+      this.props.dispatch(toggleMenu());
     };
   },
 
@@ -22,7 +23,7 @@ const CodeSelect = React.createClass({
             <div
               key={i}
               onClick={this.createClickHandler(lesson)}
-              className={styles.button}
+              className={styles.lesson}
             >
               {lesson}
             </div>)
