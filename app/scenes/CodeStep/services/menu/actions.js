@@ -1,3 +1,3 @@
-export const TOGGLE_MENU = 'TOGGLE_MENU';
-export const toggleMenu = () =>
-  ({ type: TOGGLE_MENU });
+export const TOGGLE_MENU_VISIBILITY = 'TOGGLE_MENU_VISIBILITY';
+export const toggleMenuVisibility = () =>
+  ({ type: TOGGLE_MENU_VISIBILITY });
