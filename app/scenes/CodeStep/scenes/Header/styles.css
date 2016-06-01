@@ -4,7 +4,7 @@
   font-family: "Roboto Mono", monospace;
 
   font-size: 12px;
-  flex: 1 1 auto;
+  flex: 1 1 fit;
   display: flex;
   align-items: center;
   justify-content: center;

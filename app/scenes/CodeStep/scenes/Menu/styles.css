@@ -4,8 +4,8 @@
   position: fixed;
   z-index: 9999999;
 
-  background: lighterBackground;
-  box-shadow: 2px 2px 2px dark;
+  /*background: lighterBackground;*/
+  /*box-shadow: 2px 2px 2px dark;*/
 
 
   width: 60vw;
