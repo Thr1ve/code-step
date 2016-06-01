@@ -15,7 +15,6 @@ const CodeSelect = React.createClass({
   },
 
   render() {
-    console.log(this.props.availableLessons);
     return (
       <div className={styles.container}>
         {
@@ -34,9 +33,9 @@ const CodeSelect = React.createClass({
 });
 
 function mapStateToProps(state) {
-  const { available } = state.codeStep.lessons;
+  const { availableList } = state.codeStep.lessons;
   return {
-    availableLessons: Object.keys(available)
+    availableLessons: availableList
   };
 }
 
