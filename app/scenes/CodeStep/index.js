@@ -4,12 +4,12 @@ import { connect } from 'react-redux';
 import styles from './styles.css';
 
 import Keybindings from '../../components/Keybindings';
-import SideBar from './scenes/SideBar';
+import ScopesBar from './scenes/ScopesBar';
 import ProgressBar from './scenes/ProgressBar';
 import Notes from './scenes/Notes';
 import Code from './scenes/Code';
 import Header from './scenes/Header';
-import Menu from './scenes/Menu';
+import Menu from './scenes/MenuLayer';
 
 import {
   up, down, toggleMenu, enter,
@@ -48,7 +48,7 @@ const Layout = React.createClass({
               <Notes />
             </div>
           </div>
-          <SideBar />
+          <ScopesBar />
         </div>
       </Keybindings>
     );

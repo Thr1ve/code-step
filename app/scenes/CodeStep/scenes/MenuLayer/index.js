@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 
 import styles from './styles.css';
 
-import CodeSelect from '../CodeSelect';
+import CodeSelect from './scenes/CodeSelect';
 
 const Menu = ({ visible, dispatch }) => (
   <div

@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import { startLesson, setCurrentLesson, toggleMenu } from '../../services';
+import { startLesson, setCurrentLesson, toggleMenu } from 'scenes/CodeStep/services';
 
 import styles from './styles.css';
 

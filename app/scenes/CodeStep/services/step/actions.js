@@ -1,6 +1,8 @@
-import { updateHighlights } from '../code/actions';
-import { updateNote } from '../notes/actions';
-import { setScopes, processScopes } from '../scopes/actions';
+import {
+  updateHighlights,
+  updateNote,
+  setScopes, processScopes
+ } from '../index';
 
 export const LOAD_STEPS = 'LOAD_STEPS';
 export const loadSteps = steps =>
