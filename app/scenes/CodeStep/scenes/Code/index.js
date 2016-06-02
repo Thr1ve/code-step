@@ -3,34 +3,29 @@ import { connect } from 'react-redux';
 
 import styles from './styles.css';
 
+import { CodeStepLayer } from 'components/transitionable';
 import Line from './components/Line';
 
-const Code = ({ lines, offset, longestLineLength, currentStep, visible }) => (
-  <div className={styles.code} style={{
-    transition: 'transform 0.4s, opacity 0.2s',
-    transform: `${visible ? '' : 'translateZ(-50vw)'}`,
-    opacity: `${visible ? '1' : '0.2'}`
-  }}>
-    <div>
-      <pre style={{
-        fontFamily: '"Roboto Mono", monospace',
-        perspective: '1000px',
-        transition: 'transform 0.4s',
-        transform: `
-      translateY(${offset === 'none' ? 'none' : ((-offset * 2) + 20)}vh)` }}
-      >
-        {lines.map((line, i) => (
-          <Line
-            key={i}
-            lineNumber={i + 1}
-            text={line.text}
-            highlighted={line.highlighted}
-            vw={getVWSize(longestLineLength)}
-          />
-        ))}
-      </pre>
-    </div>
-  </div>
+const Code = ({ lines, offset, longestLineLength, currentStep }) => (
+  <CodeStepLayer className={styles.code} >
+    <pre style={{
+      fontFamily: '"Roboto Mono", monospace',
+      perspective: '1000px',
+      transition: 'transform 0.4s',
+      transform: `
+    translateY(${offset === 'none' ? 'none' : ((-offset * 2) + 20)}vh)` }}
+    >
+      {lines.map((line, i) => (
+        <Line
+          key={i}
+          lineNumber={i + 1}
+          text={line.text}
+          highlighted={line.highlighted}
+          vw={getVWSize(longestLineLength)}
+        />
+      ))}
+    </pre>
+  </CodeStepLayer>
 );
 
 Code.propTypes = {
@@ -41,14 +36,12 @@ Code.propTypes = {
 
 
 const mapStateToProps = (state) => {
-  const { visible } = state.codeStep.menu;
   const { lines, highlightedLines } = state.codeStep.code;
   const offset = highlightedLines.length &&
     highlightedLines.reduce((prev, cur) => prev + cur) / highlightedLines.length;
 
   // TODO: move longestLineLength logic to reducer and just add it as property to our state
   return {
-    visible: !visible,
     lines,
     offset,
     currentStep: state.codeStep.steps.currentStep,

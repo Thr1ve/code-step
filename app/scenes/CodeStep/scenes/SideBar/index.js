@@ -2,36 +2,19 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { sidebar } from './styles.css';
 
+import { CodeStepLayer } from 'components/transitionable';
 import Visualiser from 'components/Visualiser';
 
-import { setScopes } from '../../services';
+const SideBar = ({ scopes }) =>
+  <CodeStepLayer
+    className={sidebar}
+  >
+    <Visualiser
+      data={scopes}
+      useHljs='false'
+    />
+  </CodeStepLayer>;
 
-const SideBar = React.createClass({
-  render() {
-    const { scopes, visible } = this.props;
-    return (
-      <div
-        className={sidebar}
-        style={{
-          transition: 'transform 0.4s, opacity 0.2s',
-          transform: `${visible ? '' : 'translateZ(-50vw)'}`,
-          opacity: `${visible ? '1' : '0.2'}`
-        }}
-      >
-        <Visualiser
-          data={scopes}
-          useHljs='false'
-        />
-      </div>
-    );
-  }
-});
-
-function mapStateToProps(state) {
-  return {
-    scopes: state.codeStep.scopes,
-    visible: !state.codeStep.menu.visible
-  };
-}
+const mapStateToProps = (state) => ({ scopes: state.codeStep.scopes });
 
 export default connect(mapStateToProps)(SideBar);

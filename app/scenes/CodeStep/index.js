@@ -38,10 +38,10 @@ const Layout = React.createClass({
   render() {
     return (
       <Keybindings keyMap={createKeyMap(this.props.dispatch)}>
-        <Menu />
         <div className={styles.container}>
           <ProgressBar />
           <div className={styles.main}>
+            <Menu />
             <Header />
             {this.props.currentLesson !== '__NONE__' ? <Code /> : <div> No lesson loaded </div>}
             <div className={styles.overlay}>
