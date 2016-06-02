@@ -16,8 +16,9 @@ import {
 
 import test1 from '../../../lessons/test1';
 import inceptionTest1 from '../../../lessons/inceptionTest1';
+import FizzBuzz from '../../../lessons/FizzBuzz';
 
-const lessons = { test1, inceptionTest1 };
+const lessons = { test1, inceptionTest1, FizzBuzz };
 
 const createKeyMap = dispatch => ({
   j: () => dispatch(up()),
