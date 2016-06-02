@@ -3,12 +3,12 @@ import { connect } from 'react-redux';
 
 import styles from './styles.css';
 
-import { CodeStepLayer } from 'components/transitionable';
+import MainLayerTransitionable from '../../components/MainLayerTransitionable';
 
 const Notes = ({ note }) =>
-  <CodeStepLayer className={styles.notes}>
+  <MainLayerTransitionable className={styles.notes}>
     {note}
-  </CodeStepLayer>;
+  </MainLayerTransitionable>;
 
 Notes.propTypes = {
   note: PropTypes.oneOfType([PropTypes.string, PropTypes.element])

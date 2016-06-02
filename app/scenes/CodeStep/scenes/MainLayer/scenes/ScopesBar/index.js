@@ -2,18 +2,18 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { sidebar } from './styles.css';
 
-import { CodeStepLayer } from 'components/transitionable';
+import MainLayerTransitionable from '../../components/MainLayerTransitionable';
 import Visualiser from 'components/Visualiser';
 
 const SideBar = ({ scopes }) =>
-  <CodeStepLayer
+  <MainLayerTransitionable
     className={sidebar}
   >
     <Visualiser
       data={scopes}
       useHljs='false'
     />
-  </CodeStepLayer>;
+  </MainLayerTransitionable>;
 
 const mapStateToProps = (state) => ({ scopes: state.codeStep.scopes });
 

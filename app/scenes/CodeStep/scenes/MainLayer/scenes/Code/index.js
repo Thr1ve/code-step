@@ -3,11 +3,11 @@ import { connect } from 'react-redux';
 
 import styles from './styles.css';
 
-import { CodeStepLayer } from 'components/transitionable';
+import MainLayerTransitionable from '../../components/MainLayerTransitionable';
 import Line from './components/Line';
 
 const Code = ({ lines, offset, longestLineLength, currentStep }) => (
-  <CodeStepLayer className={styles.code} >
+  <MainLayerTransitionable className={styles.code} >
     <pre style={{
       fontFamily: '"Roboto Mono", monospace',
       perspective: '1000px',
@@ -25,7 +25,7 @@ const Code = ({ lines, offset, longestLineLength, currentStep }) => (
         />
       ))}
     </pre>
-  </CodeStepLayer>
+  </MainLayerTransitionable>
 );
 
 Code.propTypes = {

@@ -4,12 +4,10 @@ import { connect } from 'react-redux';
 import styles from './styles.css';
 
 import Keybindings from '../../components/Keybindings';
-import ScopesBar from './scenes/ScopesBar';
 import ProgressBar from './scenes/ProgressBar';
-import Notes from './scenes/Notes';
-import Code from './scenes/Code';
 import Header from './scenes/Header';
 import Menu from './scenes/MenuLayer';
+import { Code, Notes, ScopesBar } from './scenes/MainLayer';
 
 import {
   up, down, toggleMenu, enter,

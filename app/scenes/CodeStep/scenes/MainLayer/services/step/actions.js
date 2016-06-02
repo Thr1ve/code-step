@@ -2,7 +2,7 @@ import {
   updateHighlights,
   updateNote,
   setScopes, processScopes
- } from '../index';
+} from 'scenes/CodeStep/services';
 
 export const LOAD_STEPS = 'LOAD_STEPS';
 export const loadSteps = steps =>

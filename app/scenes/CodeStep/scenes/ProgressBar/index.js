@@ -2,7 +2,7 @@ import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
 import StepIcon from './components/StepIcon';
 
-import { pickStep } from '../../services/step/actions';
+import { pickStep } from 'scenes/CodeStep/services';
 
 import { progressBar } from './styles.css';
 
