@@ -11,7 +11,10 @@ import Code from './scenes/Code';
 import Header from './scenes/Header';
 import Menu from './scenes/Menu';
 
-import { up, down, toggleMenu, loadLessons, enter } from './services';
+import {
+  up, down, toggleMenu, enter,
+  loadLessons, setCurrentLesson, startLesson
+} from './services';
 
 import test1 from '../../../lessons/test1';
 import inceptionTest1 from '../../../lessons/inceptionTest1';
@@ -28,6 +31,8 @@ const createKeyMap = dispatch => ({
 const Layout = React.createClass({
   componentDidMount() {
     this.props.dispatch(loadLessons(lessons));
+    this.props.dispatch(setCurrentLesson('test1'));
+    this.props.dispatch(startLesson());
   },
 
   render() {

@@ -8,9 +8,16 @@ import { setScopes } from '../../services';
 
 const SideBar = React.createClass({
   render() {
-    const { scopes } = this.props;
+    const { scopes, visible } = this.props;
     return (
-      <div className={sidebar}>
+      <div
+        className={sidebar}
+        style={{
+          transition: 'transform 0.4s, opacity 0.2s',
+          transform: `${visible ? '' : 'translateZ(-50vw)'}`,
+          opacity: `${visible ? '1' : '0.2'}`
+        }}
+      >
         <Visualiser
           data={scopes}
           useHljs='false'
@@ -22,7 +29,8 @@ const SideBar = React.createClass({
 
 function mapStateToProps(state) {
   return {
-    scopes: state.codeStep.scopes
+    scopes: state.codeStep.scopes,
+    visible: !state.codeStep.menu.visible
   };
 }
 

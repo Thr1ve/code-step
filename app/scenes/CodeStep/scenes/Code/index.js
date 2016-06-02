@@ -5,23 +5,19 @@ import styles from './styles.css';
 
 import Line from './components/Line';
 
-// const lines = [
-//   'this line is 30 characters$',
-//   'this line is 50 characters long. this line is $',
-//   'this line is 100 characters long.this line is 100 characters long.this line is 100 characters lo$',
-//   // 'this line is 150 characters long.this line is 150 characters long.this line is 150 characters lonthis line is 150 characters long.this line is 150$',
-//   // 'this line is 200 characters long.this line is 200 characters long.this line is 200 characters lonthis line is 200 characters long.this line is 200 characters long.this line is 200 characters long $'
-// ];
-
-const Code = ({ lines, offset, longestLineLength, currentStep }) => (
-  <div className={styles.code}>
+const Code = ({ lines, offset, longestLineLength, currentStep, visible }) => (
+  <div className={styles.code} style={{
+    transition: 'transform 0.4s, opacity 0.2s',
+    transform: `${visible ? '' : 'translateZ(-50vw)'}`,
+    opacity: `${visible ? '1' : '0.2'}`
+  }}>
     <div>
       <pre style={{
         fontFamily: '"Roboto Mono", monospace',
         perspective: '1000px',
         transition: 'transform 0.4s',
         transform: `
-          translateY(${offset === 'none' ? 'none' : ((-offset * 2) + 20)}vh)` }}
+      translateY(${offset === 'none' ? 'none' : ((-offset * 2) + 20)}vh)` }}
       >
         {lines.map((line, i) => (
           <Line
@@ -45,12 +41,14 @@ Code.propTypes = {
 
 
 const mapStateToProps = (state) => {
+  const { visible } = state.codeStep.menu;
   const { lines, highlightedLines } = state.codeStep.code;
   const offset = highlightedLines.length &&
     highlightedLines.reduce((prev, cur) => prev + cur) / highlightedLines.length;
 
   // TODO: move longestLineLength logic to reducer and just add it as property to our state
   return {
+    visible: !visible,
     lines,
     offset,
     currentStep: state.codeStep.steps.currentStep,
