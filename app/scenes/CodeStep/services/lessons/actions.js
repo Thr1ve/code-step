@@ -1,4 +1,4 @@
-import { initCode, initSteps } from '../index';
+import { setMenuOptions, initCode, initSteps } from '../index';
 
 export const ADD_LESSONS = 'ADD_LESSONS';
 export const addLessons = lessons =>
@@ -20,6 +20,7 @@ export const initLesson = lesson => (dispatch, getState) => {
 
 export const loadLessons = lessons => (dispatch, getState) => {
   dispatch(addLessons(lessons));
+  dispatch(setMenuOptions(Object.keys(lessons)));
 };
 
 export const startLesson = () => (dispatch, getState) => {

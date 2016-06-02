@@ -1,4 +1,4 @@
-@value lighterBackground, dark from "styles/colors.css";
+@value lighterBackground, darkerBackground, dark from "styles/colors.css";
 
 .container {
   display: flex;
@@ -14,4 +14,14 @@
   box-shadow: 2px 2px 2px dark;
   font-family: "Roboto Mono", monospace;
   margin: 10px;
+  padding: 5px;
+}
+
+.selectedLesson {
+  background: darkerBackground;
+  box-shadow: 2px 2px 2px dark;
+  font-family: "Roboto Mono", monospace;
+  margin: 10px;
+  color: lighterBackground;
+  padding: 5px;
 }

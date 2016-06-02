@@ -1,5 +1,9 @@
-import { previousStep, nextStep } from '../step/actions';
-import { toggleMenuVisibility } from '../menu/actions';
+import {
+  previousStep, nextStep,
+  menuSelectPrevious, menuSelectNext,
+  toggleMenuVisibility, setCurrentLesson,
+  startLesson
+} from '../index';
 
 export const SET_LAYER = 'SET_LAYER';
 export const setLayer = layer => ({ type: SET_LAYER, layer });
@@ -21,7 +25,7 @@ export const up = () => (dispatch, getState) => {
     case 'CODESTEP':
       return dispatch(nextStep());
     case 'MENU':
-      return console.log('next menu selection');
+      return dispatch(menuSelectNext());
     default:
       break;
   }
@@ -33,7 +37,24 @@ export const down = () => (dispatch, getState) => {
     case 'CODESTEP':
       return dispatch(previousStep());
     case 'MENU':
-      return console.log('previous menu selection');
+      return dispatch(menuSelectPrevious());
+    default:
+      break;
+  }
+};
+
+export const enter = lessonName => (dispatch, getState) => {
+  const { nav, menu } = getState().codeStep;
+  const { layer } = nav;
+  const { options, selectedIndex } = menu;
+  switch (layer) {
+    case 'CODESTEP':
+      break;
+    case 'MENU':
+      dispatch(setCurrentLesson(options[selectedIndex]));
+      dispatch(startLesson());
+      dispatch(toggleMenu());
+      break;
     default:
       break;
   }

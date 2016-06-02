@@ -11,7 +11,7 @@ import Code from './scenes/Code';
 import Header from './scenes/Header';
 import Menu from './scenes/Menu';
 
-import { up, down, toggleMenu, loadLessons } from './services';
+import { up, down, toggleMenu, loadLessons, enter } from './services';
 
 import test1 from '../../../lessons/test1';
 import inceptionTest1 from '../../../lessons/inceptionTest1';
@@ -21,7 +21,8 @@ const lessons = { test1, inceptionTest1 };
 const createKeyMap = dispatch => ({
   j: () => dispatch(up()),
   k: () => dispatch(down()),
-  esc: () => dispatch(toggleMenu())
+  esc: () => dispatch(toggleMenu()),
+  enter: () => dispatch(enter())
 });
 
 const Layout = React.createClass({

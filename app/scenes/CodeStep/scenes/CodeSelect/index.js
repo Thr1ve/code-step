@@ -22,7 +22,7 @@ const CodeSelect = React.createClass({
             <div
               key={i}
               onClick={this.createClickHandler(lesson)}
-              className={styles.lesson}
+              className={i === this.props.selectedIndex ? styles.selectedLesson : styles.lesson}
             >
               {lesson}
             </div>)
@@ -33,9 +33,10 @@ const CodeSelect = React.createClass({
 });
 
 function mapStateToProps(state) {
-  const { availableList } = state.codeStep.lessons;
+  const { options, selectedIndex } = state.codeStep.menu;
   return {
-    availableLessons: availableList
+    availableLessons: options,
+    selectedIndex
   };
 }
 
