@@ -1,7 +1,7 @@
 import {
   updateHighlights,
-  updateNote,
-  setScopes, processScopes
+  updateNote, setZoom,
+  setScopes, processScopes,
 } from 'scenes/CodeStep/services';
 
 export const LOAD_STEPS = 'LOAD_STEPS';
@@ -23,7 +23,8 @@ export const setStep = (n) =>
 
 export const executeCurrentStep = () => (dispatch, getState) => {
   const { loadedSteps, currentStep } = getState().codeStep.steps;
-  const { highlighted, scopes, note } = loadedSteps[currentStep];
+  const { highlighted, scopes, note, zoom } = loadedSteps[currentStep];
+  dispatch(setZoom(zoom || 0));
   dispatch(updateHighlights(highlighted));
   dispatch(setScopes(scopes));
   dispatch(updateNote(note));

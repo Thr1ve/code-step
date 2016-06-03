@@ -6,6 +6,9 @@ export const SET_HIGHLIGHTS = 'SET_HIGHLIGHTS';
 export const setHighlights = (lines, linesArray) =>
   ({ type: SET_HIGHLIGHTS, lines, linesArray });
 
+export const SET_ZOOM = 'SET_ZOOM';
+export const setZoom = zoom => ({ type: SET_ZOOM, zoom });
+
 export const updateHighlights = linesArray => dispatch => {
   // Turn array into object for constant-time lookup in reducer
   var objectified = linesArray.reduce((prev, cur) => {

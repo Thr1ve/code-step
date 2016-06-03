@@ -6,14 +6,14 @@ import styles from './styles.css';
 import MainLayerTransitionable from '../../components/MainLayerTransitionable';
 import Line from './components/Line';
 
-const Code = ({ lines, offset, longestLineLength, currentStep }) => (
+const Code = ({ lines, verticalOffset, vwSize, currentStep }) => (
   <MainLayerTransitionable className={styles.code} >
     <pre style={{
       fontFamily: '"Roboto Mono", monospace',
       perspective: '1000px',
       transition: 'transform 0.4s',
       transform: `
-    translateY(${offset === 'none' ? 'none' : ((-offset * 2) + 20)}vh)` }}
+    translateY(${verticalOffset === 'none' ? 'none' : ((-verticalOffset * 2) + 20)}vh)` }}
     >
       {lines.map((line, i) => (
         <Line
@@ -21,7 +21,7 @@ const Code = ({ lines, offset, longestLineLength, currentStep }) => (
           lineNumber={i + 1}
           text={line.text}
           highlighted={line.highlighted}
-          vw={getVWSize(longestLineLength)}
+          vw={vwSize}
         />
       ))}
     </pre>
@@ -36,23 +36,20 @@ Code.propTypes = {
 
 
 const mapStateToProps = (state) => {
-  const { lines, highlightedLines } = state.codeStep.code;
-  const offset = highlightedLines.length &&
-    highlightedLines.reduce((prev, cur) => prev + cur) / highlightedLines.length;
+  const { lines, zoom, verticalOffset, longestLineLength } = state.codeStep.code;
 
-  // TODO: move longestLineLength logic to reducer and just add it as property to our state
   return {
     lines,
-    offset,
+    verticalOffset,
+    vwSize: getVWSize(longestLineLength),
     currentStep: state.codeStep.steps.currentStep,
-    longestLineLength: lines.length === 0 ? 0 : lines.reduce((prev, cur) =>
-      (prev.text.length > cur.text.length ? prev : cur)).text.length
   };
 };
 
 export default connect(mapStateToProps)(Code);
 
 // This helps adjusts the font size so that the longest line will always fit horizontally
-function getVWSize(num) {
-  return 1.08 / (num / 100);
+function getVWSize(num, zoom = 0) {
+  return (zoom ? zoom / 1.08 : 1.08) / (num / 100);
+  // return 1.08 / (num / 100);
 }

@@ -19,7 +19,8 @@ export const code = (
 
 export const steps = [
   {
-    highlighted: [],
+    zoom: 1,
+    highlighted: [1],
     note: () => (
       <div>
       </div>
@@ -27,13 +28,13 @@ export const steps = [
     scopes() {
     }
   }, {
-    highlighted: [1],
+    highlighted: [2],
     note: (dispatch, state) => {
     },
     scopes() {
     }
   }, {
-    highlighted: [2],
+    highlighted: [3],
     note: ``,
     scopes() {
     }
