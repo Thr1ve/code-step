@@ -33151,6 +33151,8 @@
 	});
 	exports.steps = exports.code = undefined;
 
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
 	var _react = __webpack_require__(4);
 
 	var _react2 = _interopRequireDefault(_react);
@@ -33177,7 +33179,7 @@
 	  },
 	  scopes: function scopes() {}
 	}, {
-	  zoom: 0.9,
+	  // zoom: 0.9,
 	  highlighted: [1, 13],
 	  note: 'work in progress',
 	  scopes: function scopes() {}
@@ -33268,7 +33270,12 @@
 	  scopes: function scopes() {}
 	}];
 
-	exports.default = { code: code, steps: steps };
+	exports.default = {
+	  code: code,
+	  steps: steps.map(function (step) {
+	    return _extends({}, step, { zoom: 0.9 });
+	  })
+	};
 
 /***/ },
 /* 385 */
