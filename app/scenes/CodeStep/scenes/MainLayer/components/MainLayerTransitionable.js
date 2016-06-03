@@ -5,7 +5,7 @@ import Transitionable from 'components/Transitionable';
 const MainLayerTransitionable = ({ visible, ...props }) =>
   <Transitionable
     style={{
-      transition: 'transform 0.4s, opacity 0.2s',
+      transition: 'transform 0.3s, opacity 0.2s',
       transform: `${visible ? '' : 'translateZ(-50vw)'}`,
       opacity: `${visible ? '1' : '0.05'}`
     }}

@@ -6,7 +6,7 @@ const MenuLayerTransitionable = ({ visible, ...props }) =>
   <Transitionable
     {...props}
     style={{
-      transition: 'transform 0.4s, opacity 0.3s',
+      transition: 'transform 0.3s, opacity 0.2s',
       opacity: `${visible ? '1' : '0'}`,
       transform: `${visible ? '' : 'translateZ(50vw)'}`,
       zIndex: `${visible ? '99999' : '0'}`,
