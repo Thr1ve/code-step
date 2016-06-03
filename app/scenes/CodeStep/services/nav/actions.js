@@ -8,54 +8,45 @@ import {
 export const SET_LAYER = 'SET_LAYER';
 export const setLayer = layer => ({ type: SET_LAYER, layer });
 
-// TODO: hack-ish...find a better way to organize this
+const layers = {
+  CODESTEP: {
+    toggleMenu: dispatch => dispatch(setLayer('MENU')),
+    up: dispatch => dispatch(nextStep()),
+    down: dispatch => dispatch(previousStep()),
+    enter: () => {}
+  },
+  MENU: {
+    toggleMenu: dispatch => dispatch(setLayer('CODESTEP')),
+    up: dispatch => dispatch(menuSelectNext()),
+    down: dispatch => dispatch(menuSelectPrevious()),
+    enter: (dispatch, state) => {
+      const { menu } = state.codeStep;
+      const { options, selectedIndex } = menu;
+      dispatch(setCurrentLesson(options[selectedIndex]));
+      dispatch(startLesson());
+      dispatch(toggleMenu());
+    }
+  }
+};
+
 export const toggleMenu = () => (dispatch, getState) => {
   const { layer } = getState().codeStep.nav;
-  if (layer === 'MENU') {
-    dispatch(setLayer('CODESTEP'));
-  } else if (layer === 'CODESTEP') {
-    dispatch(setLayer('MENU'));
-  }
+  layers[layer].toggleMenu(dispatch);
   dispatch(toggleMenuVisibility());
 };
 
 export const up = () => (dispatch, getState) => {
   const { layer } = getState().codeStep.nav;
-  switch (layer) {
-    case 'CODESTEP':
-      return dispatch(nextStep());
-    case 'MENU':
-      return dispatch(menuSelectNext());
-    default:
-      break;
-  }
+  return layers[layer].up(dispatch);
 };
 
 export const down = () => (dispatch, getState) => {
   const { layer } = getState().codeStep.nav;
-  switch (layer) {
-    case 'CODESTEP':
-      return dispatch(previousStep());
-    case 'MENU':
-      return dispatch(menuSelectPrevious());
-    default:
-      break;
-  }
+  return layers[layer].down(dispatch);
 };
 
-export const enter = lessonName => (dispatch, getState) => {
-  const { nav, menu } = getState().codeStep;
-  const { layer } = nav;
-  const { options, selectedIndex } = menu;
-  switch (layer) {
-    case 'CODESTEP':
-      break;
-    case 'MENU':
-      dispatch(setCurrentLesson(options[selectedIndex]));
-      dispatch(startLesson());
-      dispatch(toggleMenu());
-      break;
-    default:
-      break;
-  }
+export const enter = () => (dispatch, getState) => {
+  const state = getState();
+  const { nav: { layer } } = state.codeStep;
+  return layers[layer].enter(dispatch, state);
 };
