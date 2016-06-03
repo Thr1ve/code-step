@@ -9004,7 +9004,7 @@
 
 	  return _react2.default.createElement(_Transitionable2.default, _extends({
 	    style: {
-	      transition: 'transform 0.4s, opacity 0.2s',
+	      transition: 'transform 0.3s, opacity 0.2s',
 	      transform: '' + (visible ? '' : 'translateZ(-50vw)'),
 	      opacity: '' + (visible ? '1' : '0.05')
 	    }
@@ -15432,7 +15432,7 @@
 
 	  return _react2.default.createElement(_Transitionable2.default, _extends({}, props, {
 	    style: {
-	      transition: 'transform 0.4s, opacity 0.3s',
+	      transition: 'transform 0.3s, opacity 0.2s',
 	      opacity: '' + (visible ? '1' : '0'),
 	      transform: '' + (visible ? '' : 'translateZ(50vw)'),
 	      zIndex: '' + (visible ? '99999' : '0')
