@@ -1,10 +1,12 @@
 import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
-import StepIcon from './components/StepIcon';
+
+import { progressBar } from './styles.css';
 
 import { pickStep } from 'scenes/CodeStep/services';
 
-import { progressBar } from './styles.css';
+import StepIcon from './components/StepIcon';
+import MainLayerTransitionable from '../../components/MainLayerTransitionable';
 
 const ProgressBar = React.createClass({
   propTypes: {
@@ -21,7 +23,7 @@ const ProgressBar = React.createClass({
 
   render() {
     return (
-      <div className={progressBar}>
+      <MainLayerTransitionable className={progressBar}>
         {Array.from(
           { length: this.props.totalSteps },
           (val, i) =>
@@ -32,7 +34,7 @@ const ProgressBar = React.createClass({
               step={i + 1}
             />
         )}
-      </div>
+      </MainLayerTransitionable>
     );
   }
 });

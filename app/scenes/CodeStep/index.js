@@ -4,10 +4,9 @@ import { connect } from 'react-redux';
 import styles from './styles.css';
 
 import Keybindings from '../../components/Keybindings';
-import ProgressBar from './scenes/ProgressBar';
 import Header from './scenes/Header';
 import Menu from './scenes/MenuLayer';
-import { Code, Notes, ScopesBar } from './scenes/MainLayer';
+import { ProgressBar, Code, Notes, ScopesBar } from './scenes/MainLayer';
 
 import {
   up, down, toggleMenu, enter,
@@ -15,11 +14,15 @@ import {
 } from './services';
 
 import test1 from '../../../lessons/test1';
-import inceptionTest1 from '../../../lessons/inceptionTest1';
+// import inceptionTest1 from '../../../lessons/inceptionTest1';
 import FizzBuzz from '../../../lessons/FizzBuzz';
 import FizzBuzz2 from '../../../lessons/FizzBuzz2';
 
-const lessons = { test1, FizzBuzz, FizzBuzz2 };
+const lessons = {
+  test1,
+  'Basic fizzBuzz': FizzBuzz,
+  'Better fizzBuzz': FizzBuzz2
+};
 
 const createKeyMap = dispatch => ({
   j: () => dispatch(up()),
@@ -31,7 +34,7 @@ const createKeyMap = dispatch => ({
 const Layout = React.createClass({
   componentDidMount() {
     this.props.dispatch(loadLessons(lessons));
-    this.props.dispatch(setCurrentLesson('FizzBuzz'));
+    this.props.dispatch(setCurrentLesson('Basic fizzBuzz'));
     this.props.dispatch(startLesson());
   },
 
@@ -39,16 +42,23 @@ const Layout = React.createClass({
     return (
       <Keybindings keyMap={createKeyMap(this.props.dispatch)}>
         <div className={styles.container}>
+
           <ProgressBar />
+
           <div className={styles.main}>
-            <Menu />
+
             <Header />
+
+            <Menu />
             {this.props.currentLesson !== '__NONE__' ? <Code /> : <div> No lesson loaded </div>}
             <div className={styles.overlay}>
               <Notes />
             </div>
+
           </div>
+
           <ScopesBar />
+
         </div>
       </Keybindings>
     );
