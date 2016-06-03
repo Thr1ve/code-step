@@ -2,7 +2,10 @@
 
 .menu {
   position: absolute;
-  z-index: 9999999;
+  display: flex;
+  /*z-index: 9999999;*/
+
+  /*transform: translateZ(-50vw);*/
 
   /*background: lighterBackground;*/
   /*box-shadow: 2px 2px 2px dark;*/

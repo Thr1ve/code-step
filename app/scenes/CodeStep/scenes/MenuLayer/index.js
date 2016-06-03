@@ -4,15 +4,13 @@ import { connect } from 'react-redux';
 
 import styles from './styles.css';
 
+import MenuLayerTransitionable from './components/MenuLayerTransitionable';
 import CodeSelect from './scenes/CodeSelect';
 
 const Menu = ({ visible, dispatch }) => (
-  <div
-    className={styles.menu}
-    style={{ display: `${visible ? 'flex' : 'none'}` }}
-  >
+  <MenuLayerTransitionable className={styles.menu}>
     <CodeSelect />
-  </div>
+  </MenuLayerTransitionable>
 );
 
 Menu.propTypes = {
