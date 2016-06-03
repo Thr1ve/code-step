@@ -33117,6 +33117,7 @@
 	  },
 	  scopes: function scopes() {}
 	}, {
+	  zoom: 0.9,
 	  highlighted: [1, 13],
 	  note: 'work in progress',
 	  scopes: function scopes() {}
