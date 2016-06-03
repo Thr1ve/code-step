@@ -31,18 +31,16 @@ export const steps = [
     note: `work in progress`,
     scopes() {
     }
-// first iteration
   }, {
     highlighted: [2],
     note: `work in progress`,
     scopes() {
-      this.fizzBuzz = { i: 1 };
     }
   }, {
+// first iteration
     highlighted: [3, 15],
     note: `work in progress`,
     scopes() {
-      this.fizzBuzz = { i: 1 };
     }
   }, {
     highlighted: [4],
@@ -71,16 +69,9 @@ export const steps = [
     }
   }, {
 // second iteration
-    highlighted: [2],
-    note: `work in progress`,
-    scopes() {
-      this.fizzBuzz = { i: 1 };
-    }
-  }, {
     highlighted: [3, 15],
     note: `work in progress`,
     scopes() {
-      this.fizzBuzz = { i: 1 };
     }
   }, {
     highlighted: [4],
@@ -109,12 +100,6 @@ export const steps = [
     }
   }, {
 // third iteration
-    highlighted: [2],
-    note: `work in progress`,
-    scopes() {
-      this.fizzBuzz = { i: 1 };
-    }
-  }, {
     highlighted: [3, 15],
     note: `work in progress`,
     scopes() {
@@ -147,12 +132,6 @@ export const steps = [
     }
   }, {
 // fourth iteration
-    highlighted: [2],
-    note: `work in progress`,
-    scopes() {
-      this.fizzBuzz.i = 4;
-    }
-  }, {
     highlighted: [3, 4],
     note: `work in progress`,
     scopes() {
