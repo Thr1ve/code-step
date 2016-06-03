@@ -5,7 +5,7 @@ import styles from './styles.css';
 
 import Keybindings from '../../components/Keybindings';
 import Header from './scenes/Header';
-import Menu from './scenes/MenuLayer';
+import { Menu, SelectionBar } from './scenes/MenuLayer';
 import { ProgressBar, Code, Notes, ScopesBar } from './scenes/MainLayer';
 
 import {
@@ -43,10 +43,12 @@ const Layout = React.createClass({
       <Keybindings keyMap={createKeyMap(this.props.dispatch)}>
         <div className={styles.container}>
 
-          <ProgressBar />
+          <div className={styles.trackBar}>
+            <ProgressBar />
+            <SelectionBar />
+          </div>
 
           <div className={styles.main}>
-
             <Header />
 
             <Menu />

@@ -3,13 +3,9 @@
 .menu {
   position: absolute;
   display: flex;
-  /*z-index: 9999999;*/
-
-  /*transform: translateZ(-50vw);*/
 
   /*background: lighterBackground;*/
   /*box-shadow: 2px 2px 2px dark;*/
-
 
   width: 60%;
   left: 20%;
