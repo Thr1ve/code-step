@@ -5,7 +5,7 @@ import React from 'react';
 export const code = (
 `function fizzBuzz(){
   for (var i = 1; i <= 100; i++) {
-    if (i % 5 === 0 && i % 3 === 0){
+    if (i % 5 === 0 && i % 3 === 0) {
       console.log('FizzBuzz');
     } else if (i % 3 === 0) {
       console.log('Fizz');
@@ -19,23 +19,107 @@ export const code = (
 
 export const steps = [
   {
-    zoom: 1,
-    highlighted: [1],
-    note: () => (
-      <div>
-      </div>
-    ),
+    // zoom: 0.9,
+    highlighted: [1, 13],
+    note: `work in progress`,
+    scopes() {
+    }
+// first iteration
+  }, {
+    highlighted: [2, 12],
+    note: `work in progress`,
+    scopes() {
+      this.fizzBuzz = { i: 1 };
+    }
+  }, {
+    highlighted: [3, 4],
+    note: `work in progress`,
     scopes() {
     }
   }, {
+    highlighted: [5, 6],
+    note: `work in progress`,
+    scopes() {
+    }
+  }, {
+    highlighted: [7, 8],
+    note: `work in progress`,
+    scopes() {
+    }
+  }, {
+    highlighted: [9, 10, 11],
+    note: `work in progress`,
+    scopes() {
+    }
+  }, {
+// second iteration
     highlighted: [2],
-    note: (dispatch, state) => {
-    },
+    note: `work in progress`,
+    scopes() {
+      this.fizzBuzz.i = 2;
+    }
+  }, {
+    highlighted: [3, 4],
+    note: `work in progress`,
     scopes() {
     }
   }, {
-    highlighted: [3],
-    note: ``,
+    highlighted: [5, 6],
+    note: `work in progress`,
+    scopes() {
+    }
+  }, {
+    highlighted: [7, 8],
+    note: `work in progress`,
+    scopes() {
+    }
+  }, {
+    highlighted: [9, 10, 11],
+    note: `work in progress`,
+    scopes() {
+    }
+  }, {
+// third iteration
+    highlighted: [2],
+    note: `work in progress`,
+    scopes() {
+      this.fizzBuzz.i = 3;
+    }
+  }, {
+    highlighted: [3, 4],
+    note: `work in progress`,
+    scopes() {
+    }
+  }, {
+    highlighted: [5, 6],
+    note: `work in progress`,
+    scopes() {
+    }
+  }, {
+// fourth iteration
+    highlighted: [2],
+    note: `work in progress`,
+    scopes() {
+      this.fizzBuzz.i = 4;
+    }
+  }, {
+    highlighted: [3, 4],
+    note: `work in progress`,
+    scopes() {
+    }
+  }, {
+    highlighted: [5, 6],
+    note: `work in progress`,
+    scopes() {
+    }
+  }, {
+    highlighted: [7, 8],
+    note: `work in progress`,
+    scopes() {
+    }
+  }, {
+    highlighted: [9, 10, 11],
+    note: `work in progress`,
     scopes() {
     }
   }
