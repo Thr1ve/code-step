@@ -24,7 +24,11 @@ export const setStep = (n) =>
 export const executeCurrentStep = () => (dispatch, getState) => {
   const { loadedSteps, currentStep } = getState().codeStep.steps;
   const { highlighted, scopes, note, zoom } = loadedSteps[currentStep];
-  dispatch(setZoom(zoom || 0));
+  if (zoom !== undefined) {
+    dispatch(setZoom(zoom));
+  } else {
+    dispatch(setZoom(1));
+  }
   dispatch(updateHighlights(highlighted));
   dispatch(setScopes(scopes));
   dispatch(updateNote(note));

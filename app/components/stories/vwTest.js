@@ -12,29 +12,45 @@ const style = {
   // fontSize: '2.56vw'
 };
 
+
+const str = 'This is exactly 100 characters. This is exactly 100 characters. This is exactly 100 characters. Th$';
 const Test = React.createClass({
   render() {
     return (
       <div>
-        <pre style={style}>
-          This is exactly 100 characters. This is exactly 100 characters. This is exactly 100 characters. Th$
-        </pre>
         <div style={{ display: 'flex' }}>
           {Array.from({ length: 100 }).map((v, i) =>
             <div
               key={i}
               style={{
-                fontSize: '0.35%',
-                margin: '0.5px',
-                height: '1vw',
-                width: '1vw',
+                fontFamily: 'monospace',
+                fontSize: '1.9vw',
+                // width: '1vw',
                 // border: '0.05px solid black',
                 // background: 'blue'
               }}
-    >i</div>)}
+            >{str[i]}</div>)}
         </div>
-        <div style={{ fontSize: '100vw' }}>
-            W
+      </div>
+    );
+  }
+});
+
+const Test2 = React.createClass({
+  render() {
+    return (
+      <div>
+        <div style={{ display: 'flex' }}>
+          {Array.from({ length: 100 }).map((v, i) =>
+            <div
+              key={i}
+              style={{
+                height: '1vw',
+                width: '1vw',
+                border: '0.05px solid black',
+                // background: 'blue'
+              }}
+            ></div>)}
         </div>
       </div>
     );
@@ -42,6 +58,14 @@ const Test = React.createClass({
 });
 
 storiesOf('vw', module)
-  .add('accross screen', () => (
+  .add('accross screen with letters', () => (
     <Test />
+  ))
+  .add('accross screen with just boxes', () => (
+    <Test2 />
+  ))
+  .add('big letter', () => (
+        <div style={{ fontSize: '100vw' }}>
+            W
+        </div>
   ));

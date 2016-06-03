@@ -41,15 +41,15 @@ const mapStateToProps = (state) => {
   return {
     lines,
     verticalOffset,
-    vwSize: getVWSize(longestLineLength),
+    vwSize: getVWSize(longestLineLength, zoom),
     currentStep: state.codeStep.steps.currentStep,
   };
 };
 
 export default connect(mapStateToProps)(Code);
 
+// TODO: stop the hack-ish conjure-math and figure out how to do this in a way that's understandable
 // This helps adjusts the font size so that the longest line will always fit horizontally
-function getVWSize(num, zoom = 0) {
-  return (zoom ? zoom / 1.08 : 1.08) / (num / 100);
-  // return 1.08 / (num / 100);
+function getVWSize(num, zoom) {
+  return ((zoom * 1.85) * 0.55) / (num / 100);
 }

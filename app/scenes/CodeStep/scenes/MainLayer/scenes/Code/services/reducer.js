@@ -5,7 +5,7 @@ export default function codeReducer(state = {
   highlightedLines: [],
   verticalOffset: 0,
   logestLineLength: 0,
-  zoom: 0,
+  zoom: 1,
 }, action) {
   switch (action.type) {
     case SET_ZOOM:

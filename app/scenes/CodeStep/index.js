@@ -30,7 +30,7 @@ const createKeyMap = dispatch => ({
 const Layout = React.createClass({
   componentDidMount() {
     this.props.dispatch(loadLessons(lessons));
-    this.props.dispatch(setCurrentLesson('test1'));
+    this.props.dispatch(setCurrentLesson('FizzBuzz'));
     this.props.dispatch(startLesson());
   },
 
