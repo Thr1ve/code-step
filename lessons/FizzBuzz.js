@@ -24,7 +24,7 @@ export const steps = [
     scopes() {
     }
   }, {
-    zoom: 0.9,
+    // zoom: 0.9,
     highlighted: [1, 13],
     note: `work in progress`,
     scopes() {
@@ -130,4 +130,7 @@ export const steps = [
   }
 ];
 
-export default { code, steps };
+export default {
+  code,
+  steps: steps.map(step => ({ ...step, zoom: 0.9 }))
+};
