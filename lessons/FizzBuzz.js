@@ -19,7 +19,11 @@ export const code = (
 
 export const steps = [
   {
-    // zoom: 0.9,
+    highlighted: [],
+    note: () => <div> Per usual, you can find the code for this CodeStep <a target='_blank' href='https://github.com/Thr1ve/code-step/blob/master/lessons/FizzBuzz.js'>here</a></div>,
+    scopes() {
+    }
+  }, {
     highlighted: [1, 13],
     note: `work in progress`,
     scopes() {

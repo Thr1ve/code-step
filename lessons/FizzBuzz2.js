@@ -22,6 +22,11 @@ export const code = (
 
 export const steps = [
   {
+    highlighted: [],
+    note: () => <div> Per usual, you can find the code for this CodeStep <a target='_blank' href='https://github.com/Thr1ve/code-step/blob/master/lessons/FizzBuzz2.js'>here</a></div>,
+    scopes() {
+    }
+  }, {
     highlighted: [1, 16],
     note: `work in progress`,
     scopes() {
