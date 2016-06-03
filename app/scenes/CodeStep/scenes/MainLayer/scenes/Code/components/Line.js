@@ -1,7 +1,7 @@
 import React from 'react';
 
 const styles = {
-  transition: 'font-size 0.2s, transform 0.4s',
+  transition: 'font-size 0.3s, transform 0.4s',
 };
 
 const Line = ({ lineNumber, text, highlighted, vw = 1 }) => {
@@ -19,7 +19,7 @@ const Line = ({ lineNumber, text, highlighted, vw = 1 }) => {
         ...styles
       }}
     >
-      {`${lineNumber}. ${text}`}
+      {`${lineNumber <= 9 ? ` ${lineNumber}` : `${lineNumber}`}. ${text}`}
     </div>
   );
 };
