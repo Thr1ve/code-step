@@ -34,23 +34,6 @@
   right: 0;
   bottom: 0;
 }
-.styles__stepIconStyles___3COEO {
-  background: #c0c0c0;
-  padding: 0.8vh 0.8vw;
-  color: #1a1a1a;
-  font-family: "Roboto", monospace;
-}
-.styles__progressBar___3KQ2A {
-  flex: 1 1 auto;
-  overflow: hidden;
-  max-width: 10%;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
-  margin: 10px;
-}
 .styles__header___2KCu_ {
   font-family: "Roboto Mono", monospace;
 
@@ -98,7 +81,10 @@
 }
 .styles__menu___2uCq- {
   position: absolute;
-  z-index: 9999999;
+  display: flex;
+  /*z-index: 9999999;*/
+
+  /*transform: translateZ(-50vw);*/
 
   /*background: lighterBackground;*/
   /*box-shadow: 2px 2px 2px dark;*/
@@ -174,4 +160,21 @@
 }
 .styles__visualiser___3Yj1X .styles__visualiserRow___3qGoJ {
   display: inline-block;
+}
+.styles__progressBar___1cKB_ {
+  flex: 1 1 auto;
+  overflow: hidden;
+  max-width: 10%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  margin: 10px;
+}
+.styles__stepIconStyles___1CHkf {
+  background: #c0c0c0;
+  padding: 0.8vh 0.8vw;
+  color: #1a1a1a;
+  font-family: "Roboto", monospace;
 }
