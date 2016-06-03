@@ -33102,7 +33102,21 @@
 	var code = exports.code = 'function fizzBuzz(){\n  for (var i = 1; i <= 100; i++) {\n    if (i % 5 === 0 && i % 3 === 0) {\n      console.log(\'FizzBuzz\');\n    } else if (i % 3 === 0) {\n      console.log(\'Fizz\');\n    } else if (i % 5 === 0) {\n      console.log(\'Buzz\');\n    } else {\n      console.log(i);\n    }\n  }\n}';
 
 	var steps = exports.steps = [{
-	  // zoom: 0.9,
+	  highlighted: [],
+	  note: function note() {
+	    return _react2.default.createElement(
+	      'div',
+	      null,
+	      ' Per usual, you can find the code for this CodeStep ',
+	      _react2.default.createElement(
+	        'a',
+	        { target: '_blank', href: 'https://github.com/Thr1ve/code-step/blob/master/lessons/FizzBuzz.js' },
+	        'here'
+	      )
+	    );
+	  },
+	  scopes: function scopes() {}
+	}, {
 	  highlighted: [1, 13],
 	  note: 'work in progress',
 	  scopes: function scopes() {}
@@ -33219,6 +33233,21 @@
 	var code = exports.code = 'function fizzBuzz(){\n  var output;\n  for(var i=1;i<=100;i++){\n    output = \'\';\n    if(i%3 === 0){\n      output+=\'Fizz\';\n    }\n    if(i%5 === 0){\n      output+=\'Buzz\';\n    }\n    if(output === \'\') {\n      output+=i;\n    }\n    print(output);\n  }\n}';
 
 	var steps = exports.steps = [{
+	  highlighted: [],
+	  note: function note() {
+	    return _react2.default.createElement(
+	      'div',
+	      null,
+	      ' Per usual, you can find the code for this CodeStep ',
+	      _react2.default.createElement(
+	        'a',
+	        { target: '_blank', href: 'https://github.com/Thr1ve/code-step/blob/master/lessons/FizzBuzz2.js' },
+	        'here'
+	      )
+	    );
+	  },
+	  scopes: function scopes() {}
+	}, {
 	  highlighted: [1, 16],
 	  note: 'work in progress',
 	  scopes: function scopes() {}
