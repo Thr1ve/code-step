@@ -41,11 +41,20 @@
   right: 0;
   bottom: 0;
 }
+.styles__container___1pCPq {
+  perspective: 1000px;
+  transform-style: preserve-3d;
+}
+
+.styles__button___3tez2 {
+  transition: all 0.1s;
+  cursor: pointer;
+}
 .styles__header___2KCu_ {
   font-family: "Roboto Mono", monospace;
 
   font-size: 12px;
-  flex: 1 1 fit;
+  /*flex: 1 1 auto;*/
   display: flex;
   align-items: center;
   justify-content: center;
@@ -53,8 +62,7 @@
   height: 5vh;
   background: mediumBackground;
   margin: 10px 10px 0px 10px;
-  padding: 10px 0px 10px 0px;
-  overflow: hidden;
+  /*overflow: hidden;*/
 }
 
 .styles__headerRight___2ykEK {
@@ -63,6 +71,7 @@
   z-index: 99;
   display: flex;
   justify-content: flex-end;
+  /*padding: 10px 0px 10px 0px;*/
 }
 
 .styles__headerLeft___3QNbL {
@@ -71,6 +80,7 @@
   z-index: 99;
   display: flex;
   justify-content: flex-start;
+  /*padding: 10px 0px 10px 0px;*/
 }
 
 .styles__buttonGroup___3rsVP {
@@ -79,12 +89,6 @@
   max-width: 50%;
   display: flex;
   justify-content: space-between;
-}
-
-.styles__button___2iSay {
-  /*border: 1px dotted dark;*/
-  flex: 1 1 fit;
-  cursor: pointer;
 }
 .styles__menu___1GlTw {
   position: absolute;
