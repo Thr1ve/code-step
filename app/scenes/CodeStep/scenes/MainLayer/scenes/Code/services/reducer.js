@@ -1,4 +1,6 @@
-import { SET_ZOOM, INIT_CODE, SET_HIGHLIGHTS } from './actions';
+import {
+  SET_ZOOM, INIT_CODE, SET_HIGHLIGHTS,
+} from './actions';
 
 export default function codeReducer(state = {
   lines: [],

@@ -4,7 +4,7 @@
   font-family: "Roboto Mono", monospace;
 
   font-size: 12px;
-  flex: 1 1 fit;
+  /*flex: 1 1 auto;*/
   display: flex;
   align-items: center;
   justify-content: center;
@@ -12,8 +12,7 @@
   height: 5vh;
   background: mediumBackground;
   margin: 10px 10px 0px 10px;
-  padding: 10px 0px 10px 0px;
-  overflow: hidden;
+  /*overflow: hidden;*/
 }
 
 .headerRight {
@@ -22,6 +21,7 @@
   z-index: 99;
   display: flex;
   justify-content: flex-end;
+  /*padding: 10px 0px 10px 0px;*/
 }
 
 .headerLeft {
@@ -30,6 +30,7 @@
   z-index: 99;
   display: flex;
   justify-content: flex-start;
+  /*padding: 10px 0px 10px 0px;*/
 }
 
 .buttonGroup {
@@ -38,10 +39,4 @@
   max-width: 50%;
   display: flex;
   justify-content: space-between;
-}
-
-.button {
-  /*border: 1px dotted dark;*/
-  flex: 1 1 fit;
-  cursor: pointer;
 }

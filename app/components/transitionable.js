@@ -7,6 +7,3 @@ const Transitionable = ({ children, style, ...props }) =>
   </div>;
 
 export default Transitionable;
-
-export const MenuLayer = ({ ...props }) =>
-  <Transitionable {...props} />;
